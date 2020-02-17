@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es"> <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Lab 01</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="">
 	</head>
 	<body>
 		<header>
@@ -41,11 +40,11 @@
 						Marvel
 					</h3>
 
-					<img src="images/videogames.jpeg" height="300px" width="400px">
+					<img src="images/videogames.jpeg" alt="Videojuegos" height="300" width="400">
 				
-					<img src="images/coding.jpeg" height="300px" width="400px">
+					<img src="images/coding.jpeg" alt="Programar" height="300" width="400">
 				
-					<img src="images/marvel.jpeg" height="300px" width="400px">
+					<img src="images/marvel.jpeg" alt="Marvel" height="300" width="400">
 
 					<h2>Proyectos</h2>
 					<h3>
@@ -58,15 +57,14 @@
 						Retro Mini Console
 					</h3>
 
-					<img src="images/mario-5.PNG" height="400px" width="400px">
+					<img src="images/mario-5.PNG" alt="Super Mario MineSweeper"  height="400" width="400">
 
-					<img src="images/origins.png" height="400px" width="400px">
+					<img src="images/origins.png" alt="Origins" height="400" width="400">
 
-					<img src="images/ace-spaceman-6.PNG" height="300px" width="400px">
+					<img src="images/ace-spaceman-6.PNG" alt="Ace Spaceman: Galaxy Explorer" height="300" width="400">
 
-					<img src="images/retro-4.PNG" height="300px" width="400px">
+					<img src="images/retro-4.PNG" alt="Retro Mini Console" height="300" width="400">
 					<br/>
-				</section>
 		</section>
 		<hr/>
 		<section id="descripciones" class="descripciones">
@@ -84,48 +82,42 @@
 				<p>
 					Indican si se completo satisfactoriamente una solicitud HTTP específica.[3] Se dividen en 5 categorías generales que son:
 				</p>
-				<ol>
-					<li><h3><strong>Respuestas Informativas</strong></h3></li>
-						<strong>
+				<strong><ol>
+					<li><h3>Respuestas Informativas</h3></li>
+						
 							<ul>
 								<li>100 Continue</li>
 								<li>101 Continue Protocol</li>
 								<li>102 Processing</li>
 							</ul>
-						</strong>
-					<li><h3><strong>Respuestas Satisfactorias</strong></h3></li>
-					<strong>
+						
+					<li><h3>Respuestas Satisfactorias</h3></li>
+
 						<ul>
 							<li>200 OK</li>
 							<li>204 No Content</li>
 							<li>206 Partial Content</li>
 						</ul>
-					</strong>
-					<li><h3><strong>Redirecciones</strong></h3></li>
-					<strong>
+					<li><h3>Redirecciones</h3></li>
 						<ul>
 							<li>301 Moved Permanently</li>
 							<li>302 Found</li>
 							<li>304 Not Modified</li>
 						</ul>
-					</strong>
-					<li><h3><strong>Errores de Cliente</strong></h3></li>
-					<strong>
+					<li><h3>Errores de Cliente</h3></li>
 						<ul>
 							<li>400 Bad Request</li>
 							<li>403 Forbidden</li>
 							<li>404 Not Found</li>
 						</ul>
-					</strong>
-					<li><h3><strong>Errores de Servidor</strong></h3></li>
-					<strong>
+					<li><h3>Errores de Servidor</h3></li>
 						<ul>
 							<li>500 Internal Server Error</li>
 							<li>502 Bad Gateway</li>
 							<li>511 Network Authentication Required</li>
 						</ul>
-					</strong>
-				</ol>
+
+				</ol></strong>
 			<h2>HTML5</h2>
 				<p>
 					HTML5 es en realidad un término que define a varias tecnologías incluyendo HTML. Estas tecnologías incluyen varios APIs y estándares tales como WebGL y SVG.[4]
@@ -155,10 +147,14 @@
 			<a href="#">Back to top</a>
 			<h1>Preguntas</h1>
 			<ol>
-				<li><h3>¿Cuál es la diferencia entre Internet y la World Wide Web?</h3></li>
+				<li>
+					<h3>¿Cuál es la diferencia entre Internet y la World Wide Web?</h3>
 					El internet es una la infraestructura de una red global mientras que la World Wide Web es un servicio que provee una colección de información que se accesa a 
 					través del internet.[9]
-				<li><h3>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?[10]</h3></li>
+				</li>
+					
+				<li>
+					<h3>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?[10]</h3>
 					<strong>GET:</strong>
 					Utilizado para <em>consultar información</em> del servidor. No soporta el envío del payload.
 					<br/>
@@ -176,30 +172,51 @@
 					<br/>
 					<strong>DELETE:</strong>
 					Utilizado para <em>eliminar un registro existente</em>.
-					<br/>
+				</li>
+					
+				<br/>
 
-				<li><h3>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</h3></li>
+				<li>
+					<h3>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</h3>
 					Se debe utilizar el método POST ya que este permite el envío de payloads. Lo que significa que los datos del formulario solo van a llegar al destino al
 					que deben de llegar y no van a poder ser vistos por cualquiera.
-				<li><h3>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</h3></li>
+				</li>
+					
+				<li>
+					<h3>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</h3>
 					Se utiliza el método GET.[3]
-				<li><h3>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</h3></li>
+				</li>
+					
+				<li>
+					<h3>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</h3>
 					Es el código OK que significa que la solicitud tuvo éxito. El éxito tiene significados diferentes dependiendo de la solicitud HTTP.[3]
-				<li><h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</h3></li>
+				</li>
+					
+				<li>
+					<h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</h3>
 					Si ya que este error significa que no se pudo encontrar el contenido solicitado. [3]
-				<li><h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</h3></li>
+				</li>
+					
+				<li>
+					<h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</h3>
 					Si ya que este error significa que el servidor encontró una situación que no sabe manejar. [3]
-				<li><h3>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</h3></li>
+				</li>
+					
+				<li>
+					<h3>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</h3>
 					Un atributo depreciado/desaprobado es aquel que ya está desactualizado y puede volverse obsoleto en versiones futuras de HTML.[11] Algunos ejemplos son:
 					<br/>
 					<strong>
-						< center > 
+						&lt;center>
 						<br/>
-						< font >
+						&lt;font>
 						<br/>
-						< strike >
+						&lt;strike>
 					</strong>
-				<li><h3>¿Cuáles son las diferencias principales entre HTML 4 y HTML5? [12]</h3></li>
+				</li>
+					
+				<li>
+					<h3>¿Cuáles son las diferencias principales entre HTML 4 y HTML5? [12]</h3>
 					HTML5 tiene soporte nativo de video y audio
 					<br/>
 					HTML5 tiene un manejo de errores consistente
@@ -207,17 +224,20 @@
 					HTML5 soporta más características para aplicaciones web
 					<br/>
 					Se mejoró el soporte a dispositivos móbiles
-				<li><h3>¿Qué componentes de estructura y estilo tiene una tabla?</h3></li>
+				</li>
+					
+				<li>
+					<h3>¿Qué componentes de estructura y estilo tiene una tabla?</h3>
 					<strong>Estructura:</strong>[13]
 					<ul>
-						<li>< caption > : titulo de la tabla</li>
-						<li>< table > : contenedor para datos tabulados</li>
-						<li>< tbody > : define un grupo de filas de la tabla</li>
-						<li>< td > : celda de una tabla. Debe ser hijo de < tr ></li>
-						<li>< tfoot > : define un grupo de filas de tablas al final de la tabla</li>
-						<li>< th > : encabezado de la tabla</li>
-						<li>< thead > : define un grupo de filas de tablas al principio de la tabla</li>
-						<li>< tr > : fila de la tabla</li>
+						<li>&lt;caption> : titulo de la tabla</li>
+						<li>&lt; table> : contenedor para datos tabulados</li>
+						<li>&lt;tbody> : define un grupo de filas de la tabla</li>
+						<li>&lt;td> : celda de una tabla. Debe ser hijo de &lt;tr ></li>
+						<li>&lt;tfoot> : define un grupo de filas de tablas al final de la tabla</li>
+						<li>&lt;th> : encabezado de la tabla</li>
+						<li>&lt;thead> : define un grupo de filas de tablas al principio de la tabla</li>
+						<li>&lt;tr> : fila de la tabla</li>
 					</ul>
 					<strong>Estilo:</strong>[14]
 					<ul>
@@ -228,21 +248,30 @@
 						<li>padding</li>
 						<li>text-align</li>
 					</ul>
-				<li><h3>¿Cuáles son los principales controles de una forma HTML5? [15]</h3></li>
+				</li>
+					
+				<li>
+					<h3>¿Cuáles son los principales controles de una forma HTML5? [15]</h3>
 					<ul>
-						<li>< input > : define control por input dependiendo del tipo</li>
-						<li>< textarea > : define un área de texto para input</li>
-						<li>< select > : define una lista tipo drop-down </li>
-						<li>< button > : define un botón</li>
-						<li>< datalist > : define una lista de opciones pre-definidas para un input</li>
-						<li>< output > : representa el resultado de un cálculo</li>
+						<li>&lt;input> : define control por input dependiendo del tipo</li>
+						<li>&lt;textarea> : define un área de texto para input</li>
+						<li>&lt;select> : define una lista tipo drop-down </li>
+						<li>&lt;button> : define un botón</li>
+						<li>&lt;datalist> : define una lista de opciones pre-definidas para un input</li>
+						<li>&lt;output> : representa el resultado de un cálculo</li>
 					</ul>
-				<li><h3>¿Qué tanto soporte HTML5 tiene el navegador que utilizas? [16]</h3></li>
+				</li>
+					
+				<li>
+					<h3>¿Qué tanto soporte HTML5 tiene el navegador que utilizas? [16]</h3>
 					Yo utilizo la versión 80 de Google Chrome en Linux y tiene una puntuación de 476/555 puntos en el test de soporte.
+				</li>
+					
 					<br/><br/>
 				<strong>Sobre el ciclo de vida y desarrollo de los sistemas de información:</strong>
 					
-				<li><h3>¿Cuál es el ciclo de vida de los sistemas de información?</h3></li>
+				<li>
+					<h3>¿Cuál es el ciclo de vida de los sistemas de información?</h3>
 					El ciclo de vida de un sistema de información ocurre en las siguientes etapas [17]:
 					<ol>
 						<li>Planificación</li>
@@ -253,10 +282,15 @@
 						<li>Instalación o despliegue</li>
 						<li>Uso y Mantenimiento</li>
 					</ol>
-				<li><h3>¿Cuál es el ciclo de desarrollo de sistemas de información?</h3></li>
+				</li>
+					
+				<li>
+					<h3>¿Cuál es el ciclo de desarrollo de sistemas de información?</h3>
 					El ciclo de desarrollo de un sistema de información depende de que metodología se vaya a seguir. 
 					<br/>
 					Algunas de las metodologías más comunes son: Agile y Lean.
+				</li>
+					
 			</ol>
 
 		</section>
@@ -292,18 +326,19 @@
 		<hr/>
 
 		<section id="form">
+			<h1>Forma</h1>
 			<form> 
 				<label for="firstname">Nombre:</label>
 				&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
 				<label for="lastname">Apellido:</label>
 				<br/>
-				<input type="text" name="firstname">
-				<input type= "text" name="lastname">
+				<input type="text" id="firstname">
+				<input type= "text" id="lastname">
 				<br/>
 				<br/>
 				<label for="sugerencias">Sugerencias: </label>
 				<br/>
-				<textarea name="sugerencias" rows="10" cols="100"></textarea>
+				<textarea id="sugerencias" rows="10" cols="100"></textarea>
 				<br/>
 				<br/>
 				<button type="submit">Enviar</button>
