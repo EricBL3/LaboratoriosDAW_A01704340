@@ -30,7 +30,6 @@ function tablaNum()
 	td_num3.appendChild(document.createTextNode("num³"))
 	document.getElementById("tr_header").appendChild(td_num3)
 
-
 	//se le agregan las filas con sus datos a la tabla
 	for(let i = 1; i <= num; i++)
 	{
@@ -60,8 +59,54 @@ function tablaNum()
 
 
 
-//
+//Se pide el resultado de la suma de dos # aleatorios y se muestra si el resultado fue correcto y el tiempo en responder
 function suma()
+{
+	let a = Math.floor(Math.random()*100)
+	let b = Math.floor(Math.random()*100)
+	var t0 = performance.now()
+	let ans = prompt("¿Cúanto es: " + a + "+" + b +"?")
+	var t1 = performance.now()
+	let respuesta = document.createElement("p")
+	document.getElementById("funcion2").appendChild(document.createElement("br"))
+	let tiempo = document.createElement("p")
+	if(ans == a+b)
+	{	
+		respuesta.appendChild(document.createTextNode("Verdadero."))
+		tiempo.appendChild(document.createTextNode("El tiempo de respuesta fue de " + ((t1-t0)/1000).toFixed(3) + " segundos."))
+	}
+	else
+	{
+		respuesta.appendChild(document.createTextNode("Falso."))
+		tiempo.appendChild(document.createTextNode("El tiempo de respuesta fue de " + ((t1-t0)/1000).toFixed(3) + " segundos."))
+	}
+		
+	console.log(a+b)
+	console.log(ans)
+	document.getElementById("funcion2").appendChild(respuesta)
+	document.getElementById("funcion2").appendChild(tiempo)
+
+		
+}
+
+
+function contador(arr)
+{
+	console.log(arr)
+}
+
+function promedios(matriz)
+{
+	console.log(matriz)
+}
+
+function inverso(num)
+{
+	console.log(num)
+}
+
+function problema()
 {
 
 }
+
