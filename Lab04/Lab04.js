@@ -121,7 +121,7 @@ function contador(arr)
 			normal++;
 	}
 
-	let textoArreglo = document.createElement("p")
+	let textoArreglo = document.createElement("p");
 	let textoNegativos = document.createElement("p");
 	let textoCeros= document.createElement("p");
 	let textoNormal = document.createElement("p");
@@ -142,9 +142,36 @@ function contador(arr)
 	console.log(normal)
 }
 
+
+//La funcion recibe una matriz y regresa un arreglo con los promedios de cada renglon de la matriz
 function promedios(matriz)
 {
+	let child = document.getElementById("respuestas4").lastElementChild;
+	while(child)
+	{
+		document.getElementById("respuestas4").removeChild(child);
+		child = document.getElementById("respuestas4").lastElementChild;
+	}
+
+	let arr = []
+	let avg
+	for(let i = 0; i < matriz.length; i++)
+	{
+		avg = 0
+		for(let j = 0; j < matriz[i].length; j++)
+		{
+			avg += matriz[i][j]
+		}
+		avg /= matriz[i].length
+		arr[i] = avg
+	}
+
+	let respuesta = document.createElement("p")
+	respuesta.appendChild(document.createTextNode("Promedios: "+arr))
+	document.getElementById("respuestas4").appendChild(respuesta)
+
 	console.log(matriz)
+	console.log(arr)
 }
 
 function inverso(num)
