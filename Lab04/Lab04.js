@@ -62,14 +62,23 @@ function tablaNum()
 //Se pide el resultado de la suma de dos # aleatorios y se muestra si el resultado fue correcto y el tiempo en responder
 function suma()
 {
+	//quitar respuesta anterior
+	let child = document.getElementById("respuestas2").lastElementChild;
+	while(child)
+	{
+		document.getElementById("respuestas2").removeChild(child);
+		child = document.getElementById("respuestas2").lastElementChild;
+	}
+
 	let a = Math.floor(Math.random()*100)
 	let b = Math.floor(Math.random()*100)
 	var t0 = performance.now()
 	let ans = prompt("¿Cúanto es: " + a + "+" + b +"?")
 	var t1 = performance.now()
 	let respuesta = document.createElement("p")
-	document.getElementById("funcion2").appendChild(document.createElement("br"))
 	let tiempo = document.createElement("p")
+	document.getElementById("respuestas2").appendChild(document.createElement("br"))
+	
 	if(ans == a+b)
 	{	
 		respuesta.appendChild(document.createTextNode("Verdadero."))
@@ -83,16 +92,54 @@ function suma()
 		
 	console.log(a+b)
 	console.log(ans)
-	document.getElementById("funcion2").appendChild(respuesta)
-	document.getElementById("funcion2").appendChild(tiempo)
+	document.getElementById("respuestas2").appendChild(respuesta)
+	document.getElementById("respuestas2").appendChild(tiempo)
 
 		
 }
 
-
+//La funcion recibe un arreglo de numeros y muestra la cantidad de # negativos, de 0's y de valores mayores a 0
 function contador(arr)
 {
+	//quitar respuesta anterior
+	let child = document.getElementById("respuestas3").lastElementChild;
+	while(child)
+	{
+		document.getElementById("respuestas3").removeChild(child);
+		child = document.getElementById("respuestas3").lastElementChild;
+	}
+
+	let negativos = ceros = normal = 0;
+
+	for(let i = 0; i< arr.length; i++)
+	{
+		if(arr[i] < 0)
+			negativos++;
+		else if(arr[i] == 0)
+			ceros++;
+		else
+			normal++;
+	}
+
+	let textoArreglo = document.createElement("p")
+	let textoNegativos = document.createElement("p");
+	let textoCeros= document.createElement("p");
+	let textoNormal = document.createElement("p");
+
+	textoArreglo.appendChild(document.createTextNode(arr))
+	textoNegativos.appendChild(document.createTextNode("Números negativos: " +negativos))
+	textoCeros.appendChild(document.createTextNode("Números = 0: " +ceros))
+	textoNormal.appendChild(document.createTextNode("Números > 0: " +normal))
+
+	document.getElementById("respuestas3").appendChild(textoArreglo)
+	document.getElementById("respuestas3").appendChild(textoNegativos)
+	document.getElementById("respuestas3").appendChild(textoCeros)
+	document.getElementById("respuestas3").appendChild(textoNormal)
+
 	console.log(arr)
+	console.log(negativos)
+	console.log(ceros)
+	console.log(normal)
 }
 
 function promedios(matriz)
