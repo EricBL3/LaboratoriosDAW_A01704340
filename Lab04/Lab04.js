@@ -174,9 +174,32 @@ function promedios(matriz)
 	console.log(arr)
 }
 
+//La funcion recibe un número y muestra los dígitos en orden inverso
 function inverso(num)
 {
+	let ans = 0
+	let mod = 0
+
+	let normal = document.createElement("p")
+	normal.appendChild(document.createTextNode("El número es: " + num))
+	document.getElementById("respuestas5").appendChild(normal)
+
+	while(num > 0)
+	{
+		ans *= 10;
+		mod = num % 10;
+		num /= 10;
+		num = num.toFixed(0);
+		ans += mod;
+		console.log(num)
+		console.log(ans)
+	}
+
+	let respuesta = document.createElement("p")
+	respuesta.appendChild(document.createTextNode("El inverso es: "+ans))
+	document.getElementById("respuestas5").appendChild(respuesta)
 	console.log(num)
+	console.log(ans)
 }
 
 function problema()
