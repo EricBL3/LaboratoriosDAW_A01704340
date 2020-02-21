@@ -211,6 +211,27 @@ function inverso(num)
 
 function problema()
 {
+	let child = document.getElementById("pokemon").lastElementChild;
+	while(child)
+	{
+		document.getElementById("pokemon").removeChild(child);
+		child = document.getElementById("pokemon").lastElementChild;
+	}
 
+	let pokemon;
+	switch(Math.floor(Math.random()*3))
+	{
+		case 0:
+			pokemon = new Pokemon("Pikachu", "electric")
+			break;
+		case 1:
+			pokemon = new Pokemon("Squirtle", "water")
+			break;
+		case 2:
+			pokemon = new Pokemon("Charmander", "fire")
+			break;
+	}
+	pokemon.attack();
+	pokemon.displayImage();
 }
 

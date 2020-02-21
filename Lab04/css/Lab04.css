@@ -38,3 +38,15 @@ header{
 	margin-right: 50px;
 	display: inline;
 }
+
+img
+{
+	height: 373px;
+	width: 500px;
+}
+
+#pokeText
+{
+	font-size: 24px;
+	text-shadow: 1px 1px black;
+}
