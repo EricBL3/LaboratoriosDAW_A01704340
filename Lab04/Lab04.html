@@ -54,8 +54,90 @@
 		<!--Preguntas-->
 		<section class="preguntas">
 			<h2>Preguntas</h2>
+			<ol>
+				<li>
+					<h3>¿Qué diferencias y semejanzas hay entre Java y JavaScript?[1]
+					</h3>
+					<h4>Diferencias:</h4>
+						<ul>
+							<li>Java debe ser compilado mientras que JavaScript es interpretado.</li>
+							<li>JavaScript solo puede correr en un navegador.</li>
+							<li>Java es un lenguaje de programación mientras que JavaScript es un lenguaje de scripting.</li>
+						</ul>
+					<h4>Semejanzas:</h4>
+						<ul>
+							<li>Ambos son orientados a objetos.</li>
+							<li>Ambos tienen soporte multiplataforma.</li>
+							<li>Java también puede correr en un navegador.</li>
+						</ul>
+				</li>
 
+				<li>
+					<h3>¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)[2]</h3>
+					<ul>
+						<li><strong>toTimeString():</strong> Regresa la hora y el horario actual.</li>
+						<li><strong>toDateString():</strong> Regresa la fecha actual.</li>
+						<li><strong>getFullYear():</strong> Regresa el año actual.</li>
+						<li><strong>getMonth():</strong> Regresa el mes actual.</li>
+						<li><strong>toUTCString():</strong> Convierte el objeto Date a un string con formato UTC</li>
+					</ul>
+				</li>
 
+				<li>
+					<h3>¿Qué métodos tienen los arreglos? (Menciona al menos 5*)[2]</h3>
+					<ul>
+						<li>
+							<strong>reduce(): </strong>
+							Aplica una función a un acumulador y cada valor del arreglo para reducirlo a un solo valor.
+						</li>
+						<li>
+							<strong>filter(): </strong>
+							El método recibe una función con una condición como parámetro y regresa los valores del arreglo que pasaron 
+							la condición.
+						</li>
+						<li>
+							<strong>reverse(): </strong>
+							Invierte un arreglo.
+						</li>
+						<li>
+							<strong>concat(): </strong>
+							Concatena el arreglo pasado como parámetro.
+						</li>
+						<li>
+							<strong>shift(): </strong>
+							Remueve el primer elemento de un arreglo.
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<h3>¿Cómo se declara una variable con alcance local dentro de una función?</h3>
+					Se declara con let.
+				</li>
+
+				<li>
+					<h3>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</h3>
+					Que esa variable no va a desaparecer en cuanto acabe el bloque por lo que puede resultar problemático si se usa una 
+					variable con el mismo nombre después.
+				</li>
+
+				<li>
+					<h3>¿Qué método de String se puede utilizar para buscar patrones con expresiones regulares?¿Para qué podrías utilizar esto en una aplicación web?[3]</h3>
+					Los métodos <strong>match() y search()</strong>. Estos métodos podrían ser útiles para realizar búsquedas de texto en la aplicación web.
+				</li>
+			</ol>
+
+		</section>
+		<hr/>
+		<section class="referencias">
+			<h2>Referencias</h2>
+			<cite>
+				<ol>
+					<li>https://www.thesoftwareguild.com/faq/difference-between-java-and-javascript/</li>
+					<li>JavaScript Notes for Professionals, Chapter 8, Chapter 14</li>
+					<li>https://www.w3schools.com/js/js_regexp.asp</li>
+				</ol>
+			</cite>
 		</section>
 		
 		<script src="Lab04.js"></script>

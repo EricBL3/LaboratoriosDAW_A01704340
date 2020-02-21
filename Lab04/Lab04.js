@@ -177,6 +177,13 @@ function promedios(matriz)
 //La funcion recibe un número y muestra los dígitos en orden inverso
 function inverso(num)
 {
+	let child = document.getElementById("respuestas5").lastElementChild;
+	while(child)
+	{
+		document.getElementById("respuestas5").removeChild(child);
+		child = document.getElementById("respuestas5").lastElementChild;
+	}
+
 	let ans = 0
 	let mod = 0
 
