@@ -57,7 +57,7 @@ function tablaNum()
 	}
 }
 
-
+document.getElementById("tablaNum").onclick = tablaNum;
 
 //Se pide el resultado de la suma de dos # aleatorios y se muestra si el resultado fue correcto y el tiempo en responder
 function suma()
@@ -98,16 +98,12 @@ function suma()
 		
 }
 
+document.getElementById("suma").onclick = suma;
+
 //La funcion recibe un arreglo de numeros y muestra la cantidad de # negativos, de 0's y de valores mayores a 0
 function contador(arr)
 {
-	//quitar respuesta anterior
-	let child = document.getElementById("respuestas3").lastElementChild;
-	while(child)
-	{
-		document.getElementById("respuestas3").removeChild(child);
-		child = document.getElementById("respuestas3").lastElementChild;
-	}
+
 
 	let negativos = ceros = normal = 0;
 
@@ -142,16 +138,16 @@ function contador(arr)
 	console.log(normal)
 }
 
+document.getElementById("contador").onclick = function()
+{
+	contador([0, -12, 2, 4 , 1 , 5, 3, 0, -5, -4]);
+	contador([3,1,0,0,-2-3-5,2,45,9,12]);
+};
 
 //La funcion recibe una matriz y regresa un arreglo con los promedios de cada renglon de la matriz
 function promedios(matriz)
 {
-	let child = document.getElementById("respuestas4").lastElementChild;
-	while(child)
-	{
-		document.getElementById("respuestas4").removeChild(child);
-		child = document.getElementById("respuestas4").lastElementChild;
-	}
+	
 
 	let arr = []
 	let avg
@@ -174,16 +170,15 @@ function promedios(matriz)
 	console.log(arr)
 }
 
+document.getElementById("promedios").onclick = function()
+{
+	promedios([[100, 90, 33, 45, 54], [89, 68, 71, 93, 65], [89, 54, 134, 423, 13], [430, 90, 654, 193, 669]]);
+	promedios([[1, 2 ,3 ,4], [10, 20 ,30, 40], [50, 100, 150, 200]]);
+};
+
 //La funcion recibe un número y muestra los dígitos en orden inverso
 function inverso(num)
 {
-	let child = document.getElementById("respuestas5").lastElementChild;
-	while(child)
-	{
-		document.getElementById("respuestas5").removeChild(child);
-		child = document.getElementById("respuestas5").lastElementChild;
-	}
-
 	let ans = 0
 	let mod = 0
 
@@ -196,7 +191,7 @@ function inverso(num)
 		ans *= 10;
 		mod = num % 10;
 		num /= 10;
-		num = num.toFixed(0);
+		num = Math.floor(num);
 		ans += mod;
 		console.log(num)
 		console.log(ans)
@@ -208,6 +203,13 @@ function inverso(num)
 	console.log(num)
 	console.log(ans)
 }
+
+document.getElementById("inverso").onclick = function()
+{
+	inverso(1234);
+	inverso(98765);
+};
+
 
 function problema()
 {
@@ -233,5 +235,13 @@ function problema()
 	}
 	pokemon.attack();
 	pokemon.displayImage();
+
+let descripcion = document.createElement("p");
+descripcion.setAttribute("id", "descripcion")
+descripcion.appendChild(document.createTextNode("Esta función despliega un ataque y un gif de un Pokemon. Esto surgió de un ejercicio que hicimos en la clase de POO en dónde creamos un objeto Pokemon que desplegaba el texto de su ataque. Para este laboratorio le agregué un método al objeto que muestra un gif diferente dependiendo del Pokemon que salga. Al darle click al botón, se muestra aleatoriamente un Pokemon entre Pikachu, Squirtle y Charmander."));
+document.getElementById("pokemon").appendChild(descripcion);
+
 }
+
+document.getElementById("problema").onclick = problema;
 
