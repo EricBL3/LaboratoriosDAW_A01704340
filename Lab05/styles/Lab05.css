@@ -10,3 +10,17 @@ header{
 	margin-right: 50px;
 	display: inline;
 }
+
+.ejercicios
+{
+	text-align: center;
+}
+
+button
+{
+	background-color: blue;
+	color: white;
+	font-size: 24px;
+	border-radius: 8px;
+}
+
