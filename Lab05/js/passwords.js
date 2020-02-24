@@ -1,7 +1,7 @@
 document.getElementById("ok").onclick = function()
 {
-	let contraseña = document.getElementById("contraseña").value;
-	let confirmar = document.getElementById("confirmar").value;
+	var contraseña = document.getElementById("contraseña").value;
+	var confirmar = document.getElementById("confirmar").value;
 	
 	
 	if(contraseña === "" && confirmar === "")
@@ -33,4 +33,66 @@ function resultado(res)
 			break;
 	}
 
+}
+
+contraseña.oninput = function()
+{
+	checkLength();
+	checkNumber();
+	checkSpecial();
+	checkMayus();
+}
+
+
+function checkLength()
+{
+
+	if(contraseña.value.length >= 8)
+	{
+		document.getElementById("length").setAttribute("style", "color: green;");
+		
+	}
+	else
+	{
+		document.getElementById("length").setAttribute("style", "color: red;");
+	}
+}
+
+function checkNumber()
+{
+	//checa si tiene un numero
+	if(/\d/.test(contraseña.value))
+	{
+		document.getElementById("num").setAttribute("style", "color: green;");
+	}
+	else
+	{
+		document.getElementById("num").setAttribute("style", "color: red;");
+	}
+}
+
+function checkSpecial()
+{
+	//checa si tiene un caracter especial
+	if(/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/.test(contraseña.value))
+	{
+		document.getElementById("special").setAttribute("style", "color: green;");
+	}
+	else
+	{
+		document.getElementById("special").setAttribute("style", "color: red;");
+	}
+}
+
+function checkMayus()
+{
+	//checa si tiene una mayuscula
+	if(/[A-Z]/.test(contraseña.value))
+	{
+		document.getElementById("mayus").setAttribute("style", "color: green;");
+	}
+	else
+	{
+		document.getElementById("mayus").setAttribute("style", "color: red;");
+	}
 }
