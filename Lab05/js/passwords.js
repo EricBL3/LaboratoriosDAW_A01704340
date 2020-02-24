@@ -1,4 +1,8 @@
-document.getElementById("ok").onclick = function()
+var req1 = req2 = req3 = req4 = false;
+
+
+
+function click()
 {
 	var contraseña = document.getElementById("contraseña").value;
 	var confirmar = document.getElementById("confirmar").value;
@@ -12,6 +16,8 @@ document.getElementById("ok").onclick = function()
 		resultado(2)
 	
 }
+
+document.getElementById("ok").onclick = click;
 
 function resultado(res)
 {
@@ -41,6 +47,27 @@ contraseña.oninput = function()
 	checkNumber();
 	checkSpecial();
 	checkMayus();
+
+	if(req1 && req2 && req3 && req4)
+	{
+		if(document.contains(document.getElementById("confirm")))
+			document.getElementById("miForma").removeChild(document.getElementById("confirm"))
+		document.getElementById("ok").disabled = false;
+	}
+	else
+	{
+		if(!document.contains(document.getElementById("confirm")))
+		{
+			let text = document.createElement("p")
+			text.setAttribute("id", "confirm")
+			text.innerHTML = "La contraseña todavía no cuenta con todos los requisitos";
+			
+			document.getElementById("miForma").insertBefore(text, document.getElementById("ok"))
+			document.getElementById("ok").disabled = true;
+			document.getElementById("texto").innerHTML = "";
+		}
+	}
+
 }
 
 
@@ -50,11 +77,12 @@ function checkLength()
 	if(contraseña.value.length >= 8)
 	{
 		document.getElementById("length").setAttribute("style", "color: green;");
-		
+		req1 = true;
 	}
 	else
 	{
 		document.getElementById("length").setAttribute("style", "color: red;");
+		req1 = false;
 	}
 }
 
@@ -64,10 +92,12 @@ function checkNumber()
 	if(/\d/.test(contraseña.value))
 	{
 		document.getElementById("num").setAttribute("style", "color: green;");
+		req2 = true;
 	}
 	else
 	{
 		document.getElementById("num").setAttribute("style", "color: red;");
+		req2 = false;
 	}
 }
 
@@ -77,10 +107,12 @@ function checkSpecial()
 	if(/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/.test(contraseña.value))
 	{
 		document.getElementById("special").setAttribute("style", "color: green;");
+		req3 = true;
 	}
 	else
 	{
 		document.getElementById("special").setAttribute("style", "color: red;");
+		req3 = false;
 	}
 }
 
@@ -90,9 +122,11 @@ function checkMayus()
 	if(/[A-Z]/.test(contraseña.value))
 	{
 		document.getElementById("mayus").setAttribute("style", "color: green;");
+		req4 = true;
 	}
 	else
 	{
 		document.getElementById("mayus").setAttribute("style", "color: red;");
+		req4 = false;
 	}
 }
