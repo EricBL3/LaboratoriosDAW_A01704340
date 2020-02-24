@@ -11,7 +11,7 @@ header{
 	display: inline;
 }
 
-.ejercicios
+.ejercicios, .validador
 {
 	text-align: center;
 }
@@ -24,3 +24,8 @@ button
 	border-radius: 8px;
 }
 
+#texto
+{
+	font-size: large;
+	text-shadow: 1px 1px black;
+}
