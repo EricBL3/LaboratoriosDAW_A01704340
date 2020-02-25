@@ -6,10 +6,53 @@
 		<title>Lab05-Forma de videojuegos</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="">
+		<link rel="stylesheet" href="../styles/videojuegos.css">
 	</head>
 	<body>
 		<a href="../index.html">Regresar</a>
+		<section id="forma">
+			<form id="miForma">
+				<h2>Preguntas de videojuegos</h2>
+				<label for="nombre">Ingresa tu nombre:</label>
+				<input type="text" id="nombre">
+				<label for="cumple">Ingresa tu fecha de nacimiento:</label>
+				<input type="date" id="cumple">
+				<ol>
+					<li>
+						<h4>¿En qué consolas/dispositivos juegas videojuegos?</h4>
+						<input type="checkbox" id="pc">
+						<label for="pc">PC</label><br>
+						<input type="checkbox" id="pc">
+						<label for="pc">Switch</label><br>
+						<input type="checkbox" id="pc">
+						<label for="pc">Xbox One</label><br>
+						<input type="checkbox" id="pc">
+						<label for="pc">PlayStation 4</label><br>
+						<input type="checkbox" id="pc">
+						<label for="pc">Celular</label><br>
+					</li>
+					<li>
+						<h4>¿Cúal es tu videojuego favorito?</h4>
+						<input type="text" id="juegoFav">
+					</li>
+					<li>
+						<h4>¿Planeas comprarte una consola de la nueva generación (Xbox Series X/PlayStation 5)</h4>
+						<input type="radio" id="si" name="newGen" value="si">
+						<label for="si">Si</label><br>
+						<input type="radio" id="no" name="newGen" value="no">
+						<label for="no">No</label><br>
+						<input type="radio" id="pensando" name="newGen" value="lo estoy pensando">
+						<label for="pensando">Lo estoy pensando</label><br>
+					</li>
+				</ol>
+				<input type="submit" value="Enviar">
+
+			</form>
+		</section>
+		<br><br>
+		<section id="respuestas">
+
+		</section>
 		<script src="" ></script>
 	</body>
 </html>
