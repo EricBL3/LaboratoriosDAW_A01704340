@@ -7,7 +7,7 @@ img
 	width: 20%;
 	
 	border-radius: 4px;
-	border: 10px solid goldenrod;
+	border: 10px solid green;
 	margin-left: auto;
 	margin-right: auto;
 
@@ -23,11 +23,13 @@ img
 #juego
 {
 	width: 15%;
+	
 }
 
 #joycons
 {
 	width: 15%;
+	align-self: flex-end;
 }
 
 button
