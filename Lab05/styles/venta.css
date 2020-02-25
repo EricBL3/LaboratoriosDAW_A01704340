@@ -1,3 +1,85 @@
 body{
 	background-image: url("../images/ac bg.gif");
 }
+
+img
+{
+	width: 20%;
+	
+	border-radius: 4px;
+	border: 10px solid goldenrod;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+#consola
+{
+	width: 25%;
+	height: 50%;
+	align-self: flex-end;
+}
+
+#juego
+{
+	width: 15%;
+}
+
+#joycons
+{
+	width: 15%;
+}
+
+button
+{
+	background-color: green;
+}
+
+
+#imagenes
+{
+	display: flex;
+}
+#botones
+{
+	display: flex;
+
+}
+
+.textProducto
+{
+	background-color: wheat;
+	border: 1px solid black;
+	padding-block-start: 1em;
+	padding-block-end: 1em;
+	margin: 0;
+	
+}
+
+.btnMenos
+{
+	margin-right: auto;
+}
+
+.btnMas
+{
+	margin-left: auto;
+}
+
+#cantidad
+{
+	text-align: center;
+	align-self: center;
+}
+
+table, th, td
+{
+	background-color: aquamarine;
+	color: brown;
+	border: 1px solid black;
+	align-self: center;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: larger;
+}
+

@@ -61,7 +61,6 @@ contraseña.oninput = function()
 			let text = document.createElement("p")
 			text.setAttribute("id", "confirm")
 			text.innerHTML = "La contraseña todavía no cuenta con todos los requisitos";
-			
 			document.getElementById("miForma").insertBefore(text, document.getElementById("ok"))
 			document.getElementById("ok").disabled = true;
 			document.getElementById("texto").innerHTML = "";
