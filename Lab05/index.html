@@ -28,14 +28,21 @@
 				<li>
 					<h3>¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</h3>
 				
+						Es una buena práctica ya que permite que el sistema verifique los inputs y le notifique al usuario si alguno no es válido antes
+						de que mande la forma y se procesen de manera incorrecta los datos.
+				
 				</li>
 				<li>
 					<h3>¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</h3>
-
+					<p>Se pueden saltar utilizando el atributo de JavaServer Faces (JSF) llamado <strong>immediate</strong> que permite que se mande 
+					a llamar un proceso antes de que se realicen las validaciones de la página.[1]</p>
+				
+					<p>Otra manera de saltarse la seguridad es utilizando la función onclick de un botón en lugar de usar onsubmit.</p>
 				</li>
 				<li>
 					<h3>Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</h3>
-
+					Es una buena práctica ya que permite que el sistema pueda tener una doble validación (tanto en el front-end como una implementada aparte
+					en el back-end). Lo que haría muy difícil que se manden inputs no válidos y todos los datos se procesarían de manera correcta.
 				</li>
 			</ol>
 		</section>
@@ -44,7 +51,7 @@
 			<h2>Referencias</h2>
 			<cite>
 				<ol>
-					
+					<li>https://dzone.com/articles/jsf-and-immediate-attribute</li>
 				</ol>
 			</cite>
 		</section>
