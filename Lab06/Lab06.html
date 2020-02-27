@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es-mx"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Lab 06</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/Lab06.css">
+	</head>
+	<body>
+		<header >
+			<p class="head">Eric Buitrón López </p>
+			<p class ="head">Lab 6: Documentos dinámicos con JavaScript</p>
+			<p class="head"><u>A01704340@itesm.mx</u></p>
+		</header>
+
+		<div >
+			<img id="watermark" src="gifs/watermark.png">
+		</div>
+		<hr/>
+		<!--Funciones-->
+		<section class="funciones">
+			<div id="funcion1">
+				<button id="tablaNum">Función 1</button>
+			</div>
+
+			<div id="funcion2">
+				<button id="suma" onclick="suma()">Función 2</button>
+				<div id="respuestas2">
+
+				</div>
+			</div>
+
+			<div id="funcion3">
+				<button id="contador">Función 3</button>
+				<div id="respuestas3"></div>
+			</div>
+
+			<div id="funcion4">
+				<button id="promedios">Función 4</button>
+				<div id="respuestas4"></div>
+			</div>
+
+			<div id="funcion5">
+				<button id="inverso" >Función 5</button>
+				<div id="respuestas5"></div>
+			</div>
+
+			<div id="funcion6">
+				<button id="problema">Función 6</button>
+				<div id="pokemon"></div>
+			</div>
+			
+		</section>
+
+		<hr/>
+		<!--Preguntas-->
+		<section class="preguntas">
+			<h2>Preguntas</h2>
+			<ol>
+				<li>
+					<h3>¿Qué diferencias y semejanzas hay entre Java y JavaScript?[1]
+					</h3>
+					<h4>Diferencias:</h4>
+						<ul>
+							<li>Java debe ser compilado mientras que JavaScript es interpretado.</li>
+							<li>JavaScript solo puede correr en un navegador.</li>
+							<li>Java es un lenguaje de programación mientras que JavaScript es un lenguaje de scripting.</li>
+						</ul>
+					<h4>Semejanzas:</h4>
+						<ul>
+							<li>Ambos son orientados a objetos.</li>
+							<li>Ambos tienen soporte multiplataforma.</li>
+							<li>Java también puede correr en un navegador.</li>
+						</ul>
+				</li>
+
+				<li>
+					<h3>¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)[2]</h3>
+					<ul>
+						<li><strong>toTimeString():</strong> Regresa la hora y el horario actual.</li>
+						<li><strong>toDateString():</strong> Regresa la fecha actual.</li>
+						<li><strong>getFullYear():</strong> Regresa el año actual.</li>
+						<li><strong>getMonth():</strong> Regresa el mes actual.</li>
+						<li><strong>toUTCString():</strong> Convierte el objeto Date a un string con formato UTC</li>
+					</ul>
+				</li>
+
+				<li>
+					<h3>¿Qué métodos tienen los arreglos? (Menciona al menos 5*)[2]</h3>
+					<ul>
+						<li>
+							<strong>reduce(): </strong>
+							Aplica una función a un acumulador y cada valor del arreglo para reducirlo a un solo valor.
+						</li>
+						<li>
+							<strong>filter(): </strong>
+							El método recibe una función con una condición como parámetro y regresa los valores del arreglo que pasaron 
+							la condición.
+						</li>
+						<li>
+							<strong>reverse(): </strong>
+							Invierte un arreglo.
+						</li>
+						<li>
+							<strong>concat(): </strong>
+							Concatena el arreglo pasado como parámetro.
+						</li>
+						<li>
+							<strong>shift(): </strong>
+							Remueve el primer elemento de un arreglo.
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<h3>¿Cómo se declara una variable con alcance local dentro de una función?</h3>
+					Se declara con let.
+				</li>
+
+				<li>
+					<h3>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</h3>
+					Que esa variable no va a desaparecer en cuanto acabe el bloque por lo que puede resultar problemático si se usa una 
+					variable con el mismo nombre después.
+				</li>
+
+				<li>
+					<h3>¿Qué método de String se puede utilizar para buscar patrones con expresiones regulares?¿Para qué podrías utilizar esto en una aplicación web?[3]</h3>
+					Los métodos <strong>match() y search()</strong>. Estos métodos podrían ser útiles para realizar búsquedas de texto en la aplicación web.
+				</li>
+			</ol>
+
+		</section>
+		<hr/>
+		<section class="referencias">
+			<h2>Referencias</h2>
+			<cite>
+				<ol>
+					<li>https://www.thesoftwareguild.com/faq/difference-between-java-and-javascript/</li>
+					<li>JavaScript Notes for Professionals, Chapter 8, Chapter 14</li>
+					<li>https://www.w3schools.com/js/js_regexp.asp</li>
+				</ol>
+			</cite>
+		</section>
+		
+		<script src="js/Lab06.js"></script>
+		<script src="js/Pokemon.js"></script>
+</html>

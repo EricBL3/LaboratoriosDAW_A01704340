@@ -1,0 +1,69 @@
+table, td {
+	border: 1px solid black;
+	align-self: center;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+
+#tr_header {
+	font-weight: bold;
+}
+
+
+button {
+	background-color: blue;
+	color: white;
+	font-size: 24px;
+	border-radius: 8px;
+	
+	
+}
+
+.funciones 
+{
+	text-align: center;
+	align-items: center;
+}
+header{
+	text-align: center;
+}
+
+.head
+{
+	font-size: 2vw;
+	font-weight: bold;
+	margin-left: 50px;
+	margin-right: 50px;
+	display: inline;
+}
+
+img
+{
+	height: 373px;
+	width: 500px;
+}
+
+#pokeText
+{
+	font-size: 24px;
+	text-shadow: 1px 1px black;
+}
+
+#descripcion
+{
+	font-weight: bold;
+	text-align: center;
+}
+
+#watermark
+{
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+	opacity: 0.5;
+	z-index: 3;
+	width: 5vw;
+	height: 5vw;
+}
