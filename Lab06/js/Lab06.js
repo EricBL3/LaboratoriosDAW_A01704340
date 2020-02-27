@@ -245,3 +245,35 @@ document.getElementById("pokemon").appendChild(descripcion);
 
 document.getElementById("problema").onclick = problema;
 
+//cambia el estilo de los botones y muestra información de ayuda
+function showInfo(element)
+{
+	let btn = document.getElementById(element.id);
+	btn.style.color = "red";
+	btn.style.backgroundColor = "aqua";
+	btn.style.fontWeight = "bold";
+	
+}
+
+//regresa el estilo original de los botones y esconde la ayuda
+function hideInfo(element)
+{
+	let btn = document.getElementById(element.id);
+	btn.style.color = "white";
+	btn.style.backgroundColor = "blue";
+	btn.style.fontWeight = "normal";
+}
+
+buttons = document.getElementsByClassName("btn");
+for(let i = 0; i < buttons.length; i++)
+{
+	buttons[i].onmouseover= function(){
+		//se manda el botón en el que se está haciendo mouseover
+		showInfo(buttons[i]);
+	};
+
+	buttons[i].onmouseout = function()
+	{
+		hideInfo(buttons[i]);
+	}
+}
