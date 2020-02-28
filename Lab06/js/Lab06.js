@@ -252,7 +252,7 @@ function showInfo(element)
 	btn.style.color = "red";
 	btn.style.backgroundColor = "aqua";
 	btn.style.fontWeight = "bold";
-	
+	btn.parentElement.getElementsByClassName("ayuda")[0].style.visibility = "visible";
 }
 
 //regresa el estilo original de los botones y esconde la ayuda
@@ -262,6 +262,7 @@ function hideInfo(element)
 	btn.style.color = "white";
 	btn.style.backgroundColor = "blue";
 	btn.style.fontWeight = "normal";
+	btn.parentElement.getElementsByClassName("ayuda")[0].style.visibility = "hidden";
 }
 
 buttons = document.getElementsByClassName("btn");
