@@ -58,6 +58,10 @@ img
 {
 	font-weight: bold;
 	text-align: center;
+	align-self: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
 }
 
 #watermark
@@ -86,3 +90,15 @@ img
 	margin-left: auto;
 	margin-right: auto;
 }
+
+#pokeOption
+{
+	width: 150px;
+	height: 50px;
+	padding: 10px;
+	border: 1px solid black;
+	margin-left: auto;
+	margin-right: auto;
+	align-self: center;
+}
+

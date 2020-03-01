@@ -26,7 +26,7 @@ Pokemon.prototype.attack = function()
 		message += "Flamethrower. The opponent now has fire damage.";
 	}
 	text.appendChild(document.createTextNode(message));
-	document.getElementById("pokemon").appendChild(text);
+	document.getElementById("gif").appendChild(text);
 };
 
 Pokemon.prototype.displayImage = function()
@@ -45,5 +45,5 @@ Pokemon.prototype.displayImage = function()
 	{
 		image.setAttribute("src", "gifs/charmander.gif")
 	}
-	document.getElementById("pokemon").appendChild(image)
+	document.getElementById("gif").appendChild(image)
 };

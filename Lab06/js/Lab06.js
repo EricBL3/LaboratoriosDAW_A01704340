@@ -210,35 +210,121 @@ document.getElementById("inverso").onclick = function()
 	inverso(98765);
 };
 
-
-function problema()
+function allowDrop(ev)
 {
-	let child = document.getElementById("pokemon").lastElementChild;
-	while(child)
-	{
-		document.getElementById("pokemon").removeChild(child);
-		child = document.getElementById("pokemon").lastElementChild;
-	}
+	ev.preventDefault();
+}
 
-	let pokemon;
-	switch(Math.floor(Math.random()*3))
+function drag(ev)
+{
+	ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev)
+{
+	ev.preventDefault();
+	console.log(document.getElementById("pokeOption").childElementCount)
+	if(document.getElementById("pokeOption").childElementCount != 0)
 	{
-		case 0:
-			pokemon = new Pokemon("Pikachu", "electric")
-			break;
-		case 1:
-			pokemon = new Pokemon("Squirtle", "water")
-			break;
-		case 2:
-			pokemon = new Pokemon("Charmander", "fire")
-			break;
+		deleteElements("pokeOption")
+		deleteElements("gif")
 	}
+		
+	let data = ev.dataTransfer.getData("text");
+	
+	
+	ev.target.appendChild(document.getElementById(data));
+	let pokemon;
+	if(document.getElementById(data).id == "pika")
+		pokemon = new Pokemon("Pikachu", "electric");
+	else if(document.getElementById(data).id == "squirtle")
+		pokemon = new Pokemon("Squirtle", "water");
+	else if(document.getElementById(data).id == "charmander")
+		pokemon = new Pokemon("Charmander", "fire");
+
 	pokemon.attack();
 	pokemon.displayImage();
 
+	console.log(document.getElementById("pokeOption").childElementCount)
+}
+
+function setStyle(element)
+{
+	element.style.fontWeight = "bold";
+	element.style.fontSize = "larger";
+	element.style.textShadow = "1px 1px black";
+
+	if(element.id === "pika")
+		element.style.color = "yellow";
+	else if(element.id === "charmander")
+		element.style.color = "orange";
+	else if(element.id === "squirtle")
+		element.style.color = "aqua";
+}
+
+function createPokeElements()
+{
+	id = "pokemon";
+	//pikachu draggable text
+	let pika = document.createElement("p");
+	pika.id = "pika";
+	pika.innerHTML = "Pikachu";
+	pika.draggable = true;
+	pika.ondragstart = function(){drag(event);};
+	setStyle(pika)
+
+	//charmander draggable text
+	let charmander = document.createElement("p");
+	charmander.id = "charmander";
+	charmander.innerHTML = "Charmander";
+	charmander.draggable = true;
+	charmander.ondragstart = function(){drag(event);};
+	setStyle(charmander)
+
+	//squirtle draggable text
+	let squirtle = document.createElement("p");
+	squirtle.id = "squirtle";
+	squirtle.innerHTML = "Squirtle";
+	squirtle.draggable = true;
+	squirtle.ondragstart = function(){drag(event);};
+	setStyle(squirtle)
+
+	let caja = document.createElement("div");
+	caja.id = "pokeOption";
+	caja.ondrop = function(){drop(event);};
+	caja.ondragover = function(){allowDrop(event);};
+
+	let div = document.createElement("div");
+	div.id = "gif";
+
+
+	document.getElementById(id).appendChild(pika);
+	document.getElementById(id).appendChild(charmander);
+	document.getElementById(id).appendChild(squirtle);
+	document.getElementById(id).appendChild(caja);
+	document.getElementById(id).appendChild(div);
+}
+
+function deleteElements(id)
+{
+	let child = document.getElementById(id).lastElementChild;
+	while(child)
+	{
+		document.getElementById(id).removeChild(child);
+		child = document.getElementById(id).lastElementChild;
+	}
+}
+
+function problema()
+{
+	deleteElements("pokemon");
+	createPokeElements();
 let descripcion = document.createElement("p");
 descripcion.setAttribute("id", "descripcion")
-descripcion.appendChild(document.createTextNode("Esta función despliega un ataque y un gif de un Pokemon. Esto surgió de un ejercicio que hicimos en la clase de POO en dónde creamos un objeto Pokemon que desplegaba el texto de su ataque. Para este laboratorio le agregué un método al objeto que muestra un gif diferente dependiendo del Pokemon que salga. Al darle click al botón, se muestra aleatoriamente un Pokemon entre Pikachu, Squirtle y Charmander."));
+descripcion.appendChild(document.createTextNode("Esta función despliega un ataque y un gif de un Pokemon. Esto surgió de un ejercicio que"+
+"hicimos en la clase de POO en dónde creamos un objeto Pokemon que desplegaba el texto de su ataque. Para este laboratorio le agregué un método"+
+"al objeto que muestra un gif diferente dependiendo del Pokemon que se escoga. Para escoger un pokemon hay que draggear su nombre a la caja."+
+"Para que vuelvan a aparecer todas las opciones hay que volver a darle click al botón de función 6"));
 document.getElementById("pokemon").appendChild(descripcion);
 
 }
