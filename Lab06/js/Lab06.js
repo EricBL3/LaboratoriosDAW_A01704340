@@ -278,3 +278,19 @@ for(let i = 0; i < buttons.length; i++)
 		hideInfo(buttons[i]);
 	}
 }
+
+function changeColor()
+{
+	let values = "0123456789ABCDEF";
+	let color = "#";
+	for(let i = 0; i < 6; i++)
+	{
+		color += values[Math.floor(Math.random()*16)];
+	}
+	console.log(color)
+	console.log(document.getElementById("funciones").style.color)
+	document.getElementById("funciones").style.backgroundColor = color;
+}
+
+//setInterval cambia el color de fondo de la sección de botones cada 5 segundos.
+setInterval(changeColor, 3000);
