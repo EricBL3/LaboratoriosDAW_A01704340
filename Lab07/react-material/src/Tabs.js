@@ -12,12 +12,14 @@ import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import Bookmarks from '@material-ui/icons/Bookmarks';
-import TextField from '@material-ui/core/TextField';
+
 import InfoIcon from '@material-ui/icons/Info';
 
 import Navbar from './navbar';
 import MediaCard from './card';
-import FormButton from './FormButton';
+import Footer from './Footer';
+import Form from './Form';
+import Referencias from './Referencias';
 
 function TabPanel(props)
 {
@@ -100,37 +102,29 @@ export default function IconLabelTabs() {
 			<MediaCard />
 			
 			<MediaCard /><MediaCard /><MediaCard /><MediaCard /><MediaCard />
+			<Footer />
 		</TabPanel>
 		<TabPanel value={value} index={1}>
 			{/*DESCRIPCIONES*/ }
 			<Navbar />
+			<Footer />
 		</TabPanel>
 		<TabPanel value={value} index={2}>
 			{/*PREGUNTAS*/ }
 			<Navbar />
+			<Footer />
 		</TabPanel>
 		<TabPanel value={value} index={3}>
 			{/*REFERENCIAS*/ }
 			<Navbar />
+			<Referencias />
+			<Footer />
 		</TabPanel>	
 		<TabPanel value={value} index={4}>
 			{/*FORMA*/ }
 			<Navbar />
-			<div>
-				<TextField placeholder="Escribe tu nombre..." 
-				
-				label="Nombre" />
-				<TextField placeholder="Escribe tu apellido..." 
-				label="Apellido" />
-			</div>
-			
-			<br/>
-			<TextField placeholder="Escribe tus sugerencias..."
-			label="Sugerencias"
-			multiline
-			fullWidth
-			rows="10" />
-			<FormButton />
+			<Form />
+			<Footer />
 		</TabPanel>			
 		</div>
 
