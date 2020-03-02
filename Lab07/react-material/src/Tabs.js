@@ -20,6 +20,7 @@ import MediaCard from './card';
 import Footer from './Footer';
 import Form from './Form';
 import Referencias from './Referencias';
+import Preguntas from './Preguntas';
 
 function TabPanel(props)
 {
@@ -112,6 +113,7 @@ export default function IconLabelTabs() {
 		<TabPanel value={value} index={2}>
 			{/*PREGUNTAS*/ }
 			<Navbar />
+			<Preguntas />
 			<Footer />
 		</TabPanel>
 		<TabPanel value={value} index={3}>

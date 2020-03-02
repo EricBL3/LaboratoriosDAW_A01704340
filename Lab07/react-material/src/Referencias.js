@@ -117,7 +117,12 @@ const Referencias = () => {
 							<a target="_blank" href="https://bus206.pressbooks.com/chapter/chapter-10-information-systems-development/"><LinkIcon /></a>
 						</ListItem>
 					</li>
-
+					<li>
+						<ListItem divider button >
+							<ListItemText primary="https://www.interaction-design.org/literature/topics/material-design" />
+							<a target="_blank" href="https://www.interaction-design.org/literature/topics/material-design"><LinkIcon /></a>
+						</ListItem>
+					</li>
 
 				</ol>
 			</List>
