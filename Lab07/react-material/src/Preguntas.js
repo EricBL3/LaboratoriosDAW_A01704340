@@ -6,16 +6,21 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
+import Divider from '@material-ui/core/Divider';
+
 
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
   },
   heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular,
+	fontSize: theme.typography.pxToRem(15),
+	fontWeight: theme.typography.fontWeightBold,
+	color: "#eeeeee",
   },
+  panel: {
+	backgroundColor: "#039be5",
+}
 }));
 
 
@@ -27,10 +32,11 @@ const Preguntas = () => {
 		<div className={classes.root}>
 			<Typography variant="h5">Preguntas:</Typography>
 			{/*Pregunta 1*/}
-			<ExpansionPanel>
+			<ExpansionPanel className={classes.panel}>
 				<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 					<Typography className={classes.heading}>¿Cuál es la diferencia entre Internet y la World Wide Web?</Typography>
 				</ExpansionPanelSummary>
+				<Divider />
 				<ExpansionPanelDetails>
 					<Typography>
 					El internet es la infraestructura de una red global mientras que la World Wide Web es un servicio que provee una colección de información que se accesa a través del internet.[9]
@@ -38,10 +44,11 @@ const Preguntas = () => {
 				</ExpansionPanelDetails>
 			</ExpansionPanel>
 			{/*Pregunta 2*/}
-			<ExpansionPanel>
+			<ExpansionPanel className={classes.panel}>
 				<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 					<Typography className={classes.heading}>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?[10]</Typography>
 				</ExpansionPanelSummary>
+				<Divider />
 				<ExpansionPanelDetails>
 					<Typography>
 						<ul>
@@ -56,10 +63,11 @@ const Preguntas = () => {
 				</ExpansionPanelDetails>
 			</ExpansionPanel>
 			{/*Pregunta 3*/}
-			<ExpansionPanel>
+			<ExpansionPanel className={classes.panel}>
 				<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 					<Typography className={classes.heading}>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</Typography>
 				</ExpansionPanelSummary>
+				<Divider />
 				<ExpansionPanelDetails>
 					<Typography>
 					Se debe utilizar el método <strong>POST</strong> ya que este permite el envío de payloads. Lo que significa que los datos del formulario solo van a llegar al destino al que deben de llegar y no van a poder ser vistos por cualquiera.
@@ -67,10 +75,11 @@ const Preguntas = () => {
 				</ExpansionPanelDetails>
 			</ExpansionPanel>
 			{/*Pregunta 4*/}
-			<ExpansionPanel>
+			<ExpansionPanel className={classes.panel}>
 				<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 					<Typography className={classes.heading}>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</Typography>
 				</ExpansionPanelSummary>
+				<Divider />
 				<ExpansionPanelDetails>
 					<Typography>
 					Se utiliza el método <strong>GET</strong>.[3]
@@ -78,10 +87,11 @@ const Preguntas = () => {
 				</ExpansionPanelDetails>
 			</ExpansionPanel>
 			{/*Pregunta 5*/}
-			<ExpansionPanel>
+			<ExpansionPanel className={classes.panel}>
 				<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 					<Typography className={classes.heading}>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</Typography>
 				</ExpansionPanelSummary>
+				<Divider />
 				<ExpansionPanelDetails>
 					<Typography>
 					Es el código OK que significa que la solicitud tuvo éxito. El éxito tiene significados diferentes dependiendo de la solicitud HTTP.[3]
@@ -89,10 +99,11 @@ const Preguntas = () => {
 				</ExpansionPanelDetails>
 			</ExpansionPanel>
 			{/*Pregunta 6*/}
-			<ExpansionPanel>
+			<ExpansionPanel className={classes.panel}>
 				<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 					<Typography className={classes.heading}>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</Typography>
 				</ExpansionPanelSummary>
+				<Divider />
 				<ExpansionPanelDetails>
 					<Typography>
 					Si ya que este error significa que no se pudo encontrar el contenido solicitado. [3]
@@ -100,10 +111,11 @@ const Preguntas = () => {
 				</ExpansionPanelDetails>
 			</ExpansionPanel>
 			{/*Pregunta 7*/}
-			<ExpansionPanel>
+			<ExpansionPanel className={classes.panel}>
 				<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 					<Typography className={classes.heading}>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</Typography>
 				</ExpansionPanelSummary>
+				<Divider />
 				<ExpansionPanelDetails>
 					<Typography>
 					Si ya que este error significa que el servidor encontró una situación que no sabe manejar. [3]
@@ -111,10 +123,11 @@ const Preguntas = () => {
 				</ExpansionPanelDetails>
 			</ExpansionPanel>
 			{/*Pregunta 8*/}
-			<ExpansionPanel>
+			<ExpansionPanel className={classes.panel}>
 				<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 					<Typography className={classes.heading}>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</Typography>
 				</ExpansionPanelSummary>
+				<Divider />
 				<ExpansionPanelDetails>
 					<Typography>
 						Un atributo depreciado/desaprobado es aquel que ya está desactualizado y puede volverse obsoleto en versiones futuras de HTML.[11] Algunos ejemplos son:
@@ -127,10 +140,11 @@ const Preguntas = () => {
 				</ExpansionPanelDetails>
 			</ExpansionPanel>
 			{/*Pregunta 9*/}
-			<ExpansionPanel>
+			<ExpansionPanel className={classes.panel}>
 				<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 					<Typography className={classes.heading}>¿Cuáles son las diferencias principales entre HTML 4 y HTML5? [12]</Typography>
 				</ExpansionPanelSummary>
+				<Divider />
 				<ExpansionPanelDetails>
 					<Typography>
 						<ul>
@@ -143,10 +157,11 @@ const Preguntas = () => {
 				</ExpansionPanelDetails>
 			</ExpansionPanel>
 			{/*Pregunta 10*/}
-			<ExpansionPanel>
+			<ExpansionPanel className={classes.panel}>
 				<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 					<Typography className={classes.heading}>¿Qué componentes de estructura y estilo tiene una tabla?</Typography>
 				</ExpansionPanelSummary>
+				<Divider />
 				<ExpansionPanelDetails>
 					<Typography>
 						<Grid container justify="center" spacing={9}>
@@ -179,10 +194,11 @@ const Preguntas = () => {
 				</ExpansionPanelDetails>
 			</ExpansionPanel>
 			{/*Pregunta 11*/}
-			<ExpansionPanel>
+			<ExpansionPanel className={classes.panel}>
 				<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 					<Typography className={classes.heading}>¿Cuáles son los principales controles de una forma HTML5? [15]</Typography>
 				</ExpansionPanelSummary>
+				<Divider />
 				<ExpansionPanelDetails>
 					<Typography>
 						<ul>
@@ -197,10 +213,11 @@ const Preguntas = () => {
 				</ExpansionPanelDetails>
 			</ExpansionPanel>
 			{/*Pregunta 12*/}
-			<ExpansionPanel>
+			<ExpansionPanel className={classes.panel}>
 				<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 					<Typography className={classes.heading}>¿Qué tanto soporte HTML5 tiene el navegador que utilizas? [16]</Typography>
 				</ExpansionPanelSummary>
+				<Divider />
 				<ExpansionPanelDetails>
 					<Typography>
 					Yo utilizo la versión 80 de Google Chrome en Linux y tiene una puntuación de 476/555 puntos en el test de soporte.
@@ -210,10 +227,11 @@ const Preguntas = () => {
 			<br/>
 			Sobre el ciclo de vida y desarrollo de los sistemas de información:
 			{/*Pregunta 13*/}
-			<ExpansionPanel>
+			<ExpansionPanel className={classes.panel}>
 				<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 					<Typography className={classes.heading}>¿Cuál es el ciclo de vida de los sistemas de información?</Typography>
 				</ExpansionPanelSummary>
+				<Divider />
 				<ExpansionPanelDetails>
 					<Typography>
 						El ciclo de vida de un sistema de información ocurre en las siguientes etapas [17]:
@@ -230,10 +248,11 @@ const Preguntas = () => {
 				</ExpansionPanelDetails>
 			</ExpansionPanel>
 			{/*Pregunta 14*/}
-			<ExpansionPanel>
+			<ExpansionPanel className={classes.panel}>
 				<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 					<Typography className={classes.heading}>¿Cuál es el ciclo de desarrollo de sistemas de información?[18]</Typography>
 				</ExpansionPanelSummary>
+				<Divider />
 				<ExpansionPanelDetails>
 					<Typography>
 					El ciclo de desarrollo de un sistema de información depende de que metodología se vaya a seguir.
@@ -245,10 +264,11 @@ const Preguntas = () => {
 			<br/>
 			Pregunta Lab 7:
 			{/*Pregunta lab 7*/}
-			<ExpansionPanel>
+			<ExpansionPanel className={classes.panel}>
 				<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 					<Typography className={classes.heading}>Describe Material design</Typography>
 				</ExpansionPanelSummary>
+				<Divider />
 				<ExpansionPanelDetails>
 					<Typography>
 						Material design es un lenguaje de diseño creado por Google que intenta imitar lo más posible objetos reales en interfaces gráficas. 

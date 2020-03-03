@@ -21,6 +21,7 @@ import Footer from './Footer';
 import Form from './Form';
 import Referencias from './Referencias';
 import Preguntas from './Preguntas';
+import Descripciones from './Descripciones';
 
 function TabPanel(props)
 {
@@ -99,15 +100,13 @@ export default function IconLabelTabs() {
 			<Button variant="outlined" color="primary">
 			<Bookmarks></Bookmarks>
 			</Button> <br/>
-			
 			<MediaCard />
-			
-			<MediaCard /><MediaCard /><MediaCard /><MediaCard /><MediaCard />
 			<Footer />
 		</TabPanel>
 		<TabPanel value={value} index={1}>
 			{/*DESCRIPCIONES*/ }
 			<Navbar />
+			<Descripciones />
 			<Footer />
 		</TabPanel>
 		<TabPanel value={value} index={2}>
