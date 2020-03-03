@@ -18,10 +18,18 @@ const Footer = () => {
 	return(
 		<div>
 			<AppBar className={classes.appBar} color="primary" >
-				<Typography variant="caption">
-				 Hecho en: Visual Studio Code    
-				    https://code.visualstudio.com/
-				</Typography>
+				<Grid container justify="space-between" spacing={2}>
+					<Grid item>
+					<Typography variant="caption">
+					Hecho en: Visual Studio Code &ensp; https://code.visualstudio.com/    
+					</Typography>
+					</Grid>
+					<Grid item>
+					<Typography variant="caption">  
+					Hecho con: Material UI &ensp; 	https://material-ui.com
+					</Typography>
+					</Grid>
+				</Grid>
 			</AppBar>
 		</div>
 	)

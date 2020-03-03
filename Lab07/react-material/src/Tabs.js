@@ -10,18 +10,19 @@ import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
-import Button from '@material-ui/core/Button';
-import Bookmarks from '@material-ui/icons/Bookmarks';
+import Grid from '@material-ui/core/Grid';
 
 import InfoIcon from '@material-ui/icons/Info';
 
 import Navbar from './navbar';
-import MediaCard from './card';
 import Footer from './Footer';
 import Form from './Form';
 import Referencias from './Referencias';
 import Preguntas from './Preguntas';
 import Descripciones from './Descripciones';
+import Aficiones from './Aficiones';
+import Proyectos from './Proyectos';
+import { Card, CardContent } from '@material-ui/core';
 
 function TabPanel(props)
 {
@@ -47,6 +48,8 @@ TabPanel.propTypes = {
 };
 
 
+
+
 function a11yProps(index) {
 	return {
 	  id: `simple-tab-${index}`,
@@ -63,6 +66,9 @@ const useStyles = makeStyles(theme =>({
 		flexGrow: 1,
 		width: "100%",
 	},
+	grid: {
+		backgroundColor: "aqua",
+	}
 }));
 
 export default function IconLabelTabs() {
@@ -75,13 +81,13 @@ export default function IconLabelTabs() {
   
 	return (
 		<div className={classes.root}>
-		<AppBar color="default" position="sticky">
+		<AppBar color="primary" position="sticky">
 			<Tabs
 		  value={value}
 		  onChange={handleChange}
 		  variant="fullWidth"
-		  indicatorColor="primary"
-		  textColor="primary"
+		  indicatorColor="secondary"
+		  textColor="secondary"
 		  aria-label="icon label tabs example"
 		  variant="fullWidth"
           scrollButtons="on"
@@ -97,10 +103,27 @@ export default function IconLabelTabs() {
 		<TabPanel value={value} index={0}>
 		{/*PROYECTOS Y AFICIONES*/ }
 			<Navbar />
-			<Button variant="outlined" color="primary">
-			<Bookmarks></Bookmarks>
-			</Button> <br/>
-			<MediaCard />
+			<br/>
+			<Grid  container justify="center" spacing={2}>
+				<Grid item >
+					<Card className={classes.grid}>
+						<CardContent>
+						<Aficiones />
+						</CardContent>
+					</Card>
+				
+			
+				</Grid>
+				<Grid item>
+				<Card className={classes.grid}>
+						<CardContent>
+						<Proyectos />
+						</CardContent>
+					</Card>
+				
+				</Grid>
+			</Grid>
+			
 			<Footer />
 		</TabPanel>
 		<TabPanel value={value} index={1}>
