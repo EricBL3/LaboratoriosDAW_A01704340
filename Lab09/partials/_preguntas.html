@@ -1,4 +1,76 @@
 <div id="preguntas">
 	<h2>Preguntas</h2>
+	<div class="accordion" id="accordionExample">
+		<div class="card">
+		  <div class="card-header" id="pregunta1">
+			<h2 class="mb-0">
+			  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+				¿Qué hace la función phpinfo()? Describe y discute 3 datos que llamen tu atención.
+			  </button>
+			</h2>
+		  </div>
+	  
+		  <div id="collapseOne" class="collapse" aria-labelledby="pregunta1" data-parent="#accordionExample">
+			<div class="card-body">
+				<div class="alert alert-info" role="alert">
+				  La función phpinfo() despliega información sobre la configuración de PHP del servidor en el que está corriendo.[1]
+				  <hr/>
+				  3 datos que llaman mi atención son:
+				  <ul>
+					  <li>
+						Permite mostrar toda la información o pasar como parámetro un módulo de información.
+					  </li>
+					  <li>
+						Puede usarse para debuggear ya que contiene todos los datos EGPS (Environment, GET, POST, Cookie y Server).
+					  </li>
+					  <li>
+						Muestra información del equipo desde donde se está mandando a llamar la página php.
+					  </li>
+				  </ul>
+
+				</div> 
+			</div>
+			
+		  </div>
+		</div>
+		<div class="card">
+		  <div class="card-header" id="pregunta2">
+			<h2 class="mb-0">
+			  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+				¿Qué cambios tendrías que hacer en la configuración del servidor para que pudiera ser apto en un ambiente de producción?
+			  </button>
+			</h2>
+		  </div>
+		  <div id="collapseTwo" class="collapse" aria-labelledby="pregunta2" data-parent="#accordionExample">
+			<div class="card-body">
+				<div class="alert alert-info" role="alert">
+					Para tener un servidor apto para un ambiente de producción se tendría que cambiar la configuración de seguridad para permitir 
+					el acceso remoto de manera segura. Además, se debe de apagar la configuración de mostrar errores y mandarlos todos a un log 
+					que será útil para debuggear y hacer cambios de último momento. [2]
+  
+				  </div> 
+			</div>
+		  </div>
+		</div>
+		<div class="card">
+		  <div class="card-header" id="pregunta3">
+			<h2 class="mb-0">
+			  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+				¿Cómo es que si el código está en un archivo con código html que se despliega del lado del cliente, se ejecuta del lado del servidor? Explica.
+			  </button>
+			</h2>
+		  </div>
+		  <div id="collapseThree" class="collapse" aria-labelledby="pregunta3" data-parent="#accordionExample">
+			<div class="card-body">
+				<div class="alert alert-info" role="alert">
+					El código de un archivo html se ejecuta del lado del servidor debido a que al abrir el archivo en un navegador (cliente), este manda 
+					una solicitud HTTP que es procesado por el servidor. Al terminar de procesar la solicitud, el servidor regresa todo el html que es 
+					interpretado por el cliente para desplegarlo en la pantalla. [3]
+  
+				  </div> 
+			</div>
+		  </div>
+		</div>
+	  </div>
 </div>
 <hr/>
