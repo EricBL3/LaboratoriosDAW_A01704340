@@ -148,7 +148,25 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				...
+				<p>
+					<strong>Arreglo 1: </strong> <?= implode(", ", $arreglo1); ?>
+				</p>
+				<ul>
+					<li><strong>Promedio: </strong><?= $promedio1 ?></li>
+					<li><strong>Mediana: </strong><?= $mediana1 ?>	</li>
+					<li><strong>Menor a mayor: </strong><?= implode(", ", $menor_mayor1); ?></li>
+					<li><strong>Mayor a menor: </strong><?= implode(", ", $mayor_menor1); ?></li>
+				</ul>
+				<hr/>
+				<p>
+					<strong>Arreglo 2: </strong> <?= implode(", ", $arreglo2); ?>
+				</p>
+				<ul>
+					<li><strong>Promedio: </strong><?= $promedio2 ?></li>
+					<li><strong>Mediana: </strong><?= $mediana2 ?>	</li>
+					<li><strong>Menor a mayor: </strong><?= implode(", ", $menor_mayor2); ?></li>
+					<li><strong>Mayor a menor: </strong><?= implode(", ", $mayor_menor2); ?></li>
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -165,7 +183,37 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				...
+				<p>Tabla 1:</p>
+				<table class="table table-hover table-dark table-bordered table-striped">
+					<thead>
+						<tr>
+							<th><?= implode("</th><th>", array_keys(current($datos1))); ?></th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach ($datos1 as $row): array_map("htmlentities", $row); ?>
+							<tr>
+								<td><?= implode("</td><td>", $row); ?></td>
+							</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+				<hr/>
+				<p>Tabla 2:</p>
+				<table class="table table-hover table-dark table-bordered table-striped">
+					<thead>
+						<tr>
+							<th><?= implode("</th><th>", array_keys(current($datos2))); ?></th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach ($datos2 as $row): array_map("htmlentities", $row); ?>
+							<tr>
+								<td><?= implode("</td><td>", $row); ?></td>
+							</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>
