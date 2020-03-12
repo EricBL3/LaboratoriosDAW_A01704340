@@ -64,10 +64,14 @@
 		<!--Carta 5-->
 		<div class="col mb-4">
 			<div class="card text-white bg-dark" >
-				<div class="card-header">Función 6</div>
+				<div class="card-header">Boy or Girl</div>
 				<div class="card-body">
-				  <h5 class="card-title">Dark card title</h5>
-				  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				  <p class="card-text">
+					  Esta función es de un problema de <a href="https://codeforces.com/problemset/problem/236/A" target="_blank">codeforces</a> 
+					  llamado Boy or Girl en dónde se recibe un nombre de usuario y dependiendo de la cantidad de caracteres diferentes se detecta si 
+					  la persona con ese nombre de usuario es niño o niña. Si el # de caracteres es par, la persona es niña y se imprime "CHAT WITH 
+					  HER!!!". De otra manera, se imprime "IGNORE HIM!!!".
+				  </p>
 				</div>
 				<div class="card-footer ">
 					<!-- Button trigger modal -->
@@ -224,13 +228,35 @@
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="modalFuncion5Title">Función 6</h5>
+				<h5 class="modal-title" id="modalFuncion5Title">Boy or Girl</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body">
-				...
+				<!--respuesta 1-->
+				<h5>User: <?= $user1 ?></h5>
+				<?php if ($respuesta1): ?>
+					<div class="alert alert-success" role="alert">
+						CHAT WITH HER!!!
+					</div>
+				<?php else: ?>
+					<div class="alert alert-danger" role="alert">
+						IGNORE HIM!!!
+					</div>
+				<?php endif ?>
+				<hr/>
+				<!--respuesta 2-->
+				<h5>User: <?= $user2 ?></h5>
+				<?php if ($respuesta2): ?>
+					<div class="alert alert-success" role="alert">
+						CHAT WITH HER!!!
+					</div>
+				<?php else: ?>
+					<div class="alert alert-danger" role="alert">
+						IGNORE HIM!!!
+					</div>
+				<?php endif ?>
 			</div>
 		</div>
 	</div>

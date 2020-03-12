@@ -52,6 +52,20 @@
 	$datos2 = crearTabla(10);
 
 
+	#función boy or girl
+	function boy_or_girl($user)
+	{
+		$count = strlen(count_chars($user, 3));
+		if($count %2 == 0)
+			return true;
+		else
+			return false;
+	}
+
+	$user1 = "wjmzbmr";
+	$user2 = "xiaodao";
+	$respuesta1 = boy_or_girl($user1);
+	$respuesta2 = boy_or_girl($user2);
 
 
 	include("partials/_funciones.html");
