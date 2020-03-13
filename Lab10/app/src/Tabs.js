@@ -15,6 +15,7 @@ import InfoIcon from '@material-ui/icons/Info';
 
 import Navbar from './Navbar';
 import Preguntas from './Preguntas';
+import Referencias from './Referencias';
 
 
 function TabPanel(props)
@@ -100,7 +101,7 @@ export default function IconLabelTabs() {
 		<TabPanel value={value} index={1}>
 			{/*REFERENCIAS*/ }
 			<Navbar />
-
+			<Referencias />
  
 		</TabPanel>	
 		<TabPanel value={value} index={2}>
