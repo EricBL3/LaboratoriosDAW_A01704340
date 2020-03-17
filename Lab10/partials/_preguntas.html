@@ -1,0 +1,83 @@
+<div id="preguntas">
+	<h2>Preguntas</h2>
+	<div class="accordion" id="accordionExample">
+		<div class="card">
+		  <div class="card-header" id="pregunta1">
+			<h2 class="mb-0">
+			  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+				¿Por qué es una buena práctica separar el controlador de la vista?
+			  </button>
+			</h2>
+		  </div>
+	  
+		  <div id="collapseOne" class="collapse" aria-labelledby="pregunta1" data-parent="#accordionExample">
+			<div class="card-body">
+				<div class="alert alert-info" role="alert">
+					Es una buena práctica porque permite que el código sea más mantenible al tener todo separado por capas. De esta manera, toda la
+					lógica y el procesamiento de datos se hace de la parte del controlador y en la vista solo se muestran los resultados de todo.
+				</div> 
+			</div>
+			
+		  </div>
+		</div>
+		<div class="card">
+		  <div class="card-header" id="pregunta2">
+			<h2 class="mb-0">
+			  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+				Aparte de los arreglos $_POST y $_GET, ¿qué otros arreglos están predefinidos en php y cuál es su función?[1]
+			  </button>
+			</h2>
+		  </div>
+		  <div id="collapseTwo" class="collapse" aria-labelledby="pregunta2" data-parent="#accordionExample">
+			<div class="card-body">
+				<div class="alert alert-info" role="alert">
+					<ul>
+						<li><strong>$GLOBALS:</strong> Este arreglo guarda todas las variables globales que pueden accederse desde un archivo PHP.</li>
+						<li><strong>$_SERVER:</strong> Este arreglo guarda información del servidor tales como la IP, el nombre del host y el script que se está ejecutando</li>
+					</ul>
+  
+				  </div> 
+			</div>
+		  </div>
+		</div>
+		<div class="card">
+		  <div class="card-header" id="pregunta3">
+			<h2 class="mb-0">
+			  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+				Explora las funciones de php, y describe 2 que no hayas visto en otro lenguaje y que llamen tu atención.[1]
+			</button>
+			</h2>
+		  </div>
+		  <div id="collapseThree" class="collapse" aria-labelledby="pregunta3" data-parent="#accordionExample">
+			<div class="card-body">
+				<div class="alert alert-info" role="alert">
+					<ul>
+						<li><strong>setcookie():</strong> Esta función se usa para crear un cookie. Esto es útil para identificar a un usuario.</li>
+						<li><strong>filter_var():</strong> Esta función valida y limpia los datos de una variable.</li>
+					</ul>
+				  </div> 
+			</div>
+		  </div>
+		</div>
+		<div class="card">
+			<div class="card-header" id="pregunta4">
+			  <h2 class="mb-0">
+				<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+					¿Qué es XSS y cómo se puede prevenir?[2]
+			  </button>
+			  </h2>
+			</div>
+			<div id="collapseFour" class="collapse" aria-labelledby="pregunta4" data-parent="#accordionExample">
+			  <div class="card-body">
+				  <div class="alert alert-info" role="alert">
+					XSS es un tipo de ataque en donde un hacker inyecta código al output de una página web. Las páginas que no limpian y filtran su 
+					información son vulnerables a este tipo de ataques. Para prevenir este tipo de ataques se pueden usar las funciones 
+					<strong> htmlspecialchars()</strong> y <strong>htmlentities()</strong>, las cuales convierten todos los posibles caracteres 
+					problemáticos a entidades de HTML.
+					</div> 
+			  </div>
+			</div>
+		  </div>
+	  </div>
+</div>
+<hr/>
