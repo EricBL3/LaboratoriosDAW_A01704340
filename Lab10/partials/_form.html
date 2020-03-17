@@ -1,0 +1,64 @@
+<div id="forma">
+	<h2>Forma</h2>
+	<form class="was-validated" action="script.php" method="POST">
+		<div class="form-row">
+			<div class="col-md-4">
+				<label for="nombre">Nombre:</label>
+				<input type="text" class="form-control is-invalid" placeholder="Eric" id="nombre" name="nombre" required>
+
+			</div>
+		</div>
+		¿En qué consolas/dispositivo juegas videojuegos?
+		<div class="form-row" >
+			<div class="custom-control custom-control-inline custom-checkbox">
+				<input type="checkbox" class="custom-control-input" value="pc" id="pc" name="consolas[]" >
+				<label class="custom-control-label" for="pc">PC</label>
+			</div>
+			<div class="custom-control custom-control-inline custom-checkbox">
+				<input type="checkbox" class="custom-control-input" value="switch" id="switch" name="consolas[]" >
+				<label class="custom-control-label" for="switch">Switch</label>
+			</div>
+			<div class="custom-control custom-control-inline custom-checkbox">
+				<input type="checkbox" class="custom-control-input" value="xbox" id="xbox" name="consolas[]" >
+				<label class="custom-control-label" for="xbox">Xbox One</label>
+			</div>
+			<div class="custom-control custom-control-inline custom-checkbox">
+				<input type="checkbox" class="custom-control-input" value="play" id="play" name="consolas[]" >
+				<label class="custom-control-label" for="play">PlayStation 4</label>
+			</div>
+			<div class="custom-control custom-control-inline custom-checkbox">
+				<input type="checkbox" class="custom-control-input" value="cel" id="cel" name="consolas[]" >
+				<label class="custom-control-label" for="cel">Celular</label>
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group">
+				<select class="custom-select" name="videojuego" required>
+					<option value="" >Escoge un videojuego...</option>
+					<option value="bioshock">Bioshock</option>
+					<option value="gta">GTA V</option>
+					<option value="borderlands">Borderlands 2</option>
+					<option value="minecraft">Minecraft</option>
+				</select>
+			</div>
+		</div>
+		¿Planeas comprarte una consola de nueva generación (Xbox Series X/PlayStation 5)?
+		<div class="form-row">
+			<div class="custom-control custom-control-inline custom-radio">
+				<input type="radio" class="custom-control-input" value="si" id="si" name="nuevaGen" required>
+				<label class="custom-control-label" for="si">Si</label>
+			  </div>
+			  <div class="custom-control custom-control-inline custom-radio">
+				<input type="radio" class="custom-control-input" value="no" id="no" name="nuevaGen" required>
+				<label class="custom-control-label" for="no">No</label>
+			  </div>
+			  <div class="custom-control custom-control-inline custom-radio">
+				<input type="radio" class="custom-control-input" value="pensando" id="pensando" name="nuevaGen" required>
+				<label class="custom-control-label" for="pensando">Pensando</label>
+			  </div>
+		</div>
+				
+		<button class="btn btn-primary" type="submit">Enviar</button>
+	</form>
+</div>
+<hr/>
