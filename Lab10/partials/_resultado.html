@@ -1,1 +1,22 @@
-Hola <?= $nombre?> 
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
+	<a class="navbar-brand" href="index.php">Lab 10: Manejo de formas con php y modelo de capas</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+
+</nav>
+
+<div class="jumbotron">
+	<h1 class="display-4">Hola <?= $nombre?>!</h1>
+	<p class="lead">Tu juego favorito es: <strong><?=$videojuego?></strong> </p>
+	<img src="<?=$fotoVideojuego?>" alt="<?= $videojuego?>"> 
+	<hr class="my-4">
+	<p class="lead"><?=$comprar?> comprarte una consola de nueva generación!</p>
+	<hr class="my-4">
+	<?php if($consolas != null): ?>
+	<p class="lead">Estas son las consolas/dispositivos en los que juegas:</p>
+	<ul>
+		<?php mostrarConsolas($consolas)?>
+	</ul>
+	<?php endif; ?>
+ </div>
