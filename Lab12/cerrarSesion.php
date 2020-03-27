@@ -3,5 +3,5 @@
 
 	session_unset();
 	session_destroy();
-	echo "Saliste de la sesión";
+	header("location:controller_cuenta.php");
 ?>

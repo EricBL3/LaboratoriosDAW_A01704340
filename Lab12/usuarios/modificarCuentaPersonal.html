@@ -52,7 +52,7 @@
 				        	<?=$_SESSION["username"]?>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="../index.php">Configuracion de cuenta</a>
+                  <a class="dropdown-item" href="../controller_cuenta.php">Configuracion de cuenta</a>
                   <a class="dropdown-item" href="consultarCuentas.html">Configuracion de empleados</a>
                   <div class="dropdown-divider"><hr/></div>
                   <a class="dropdown-item" href="../cerrarSesion.php">Cerrar Sesión</a>
@@ -64,58 +64,44 @@
         <!-- Navbar ends -->
 
         <!-- Fluid Container -->
-                    <div class="container-fluid">
+        <div class="container-fluid">
 
-                      <h1 class="mt-4">Configuracion de Cuenta Personal</h1>
+          <h1 class="mt-4">Configuracion de Cuenta Personal</h1>
 
-  <div class="row">
-    <div class="col-sm">
-      Cambio de Usuario
-              <label for="chkUser">
-                  <input type="checkbox" id="chkUser" align="center" />
-              </label>
-                            <div id="dvUsuario" style="display: none">
-                                Usuario Anterior:
-                                <input type="text" id="txtPassportNumber" />
-                                <br><br>
-                                 Usuario Nuevo:
-                                <input type="text" id="txtPassportNumber" />
-                            </div>
-                            <div id="AddUser">
-                               
-                            </div>
+          <form action="../validarForma.php" method="POST" class="row">
+            <div class="col-sm">
+              <label for="chkUser">Cambio de Usuario</label>
+              <input type="checkbox" id="chkUser" align="center" />
+                    
+              <div id="dvUsuario" style="display: none">
+                Usuario Anterior:
+                <input type="text" name="oldUser" id="oldUser" />
+                <br><br>
+                Usuario Nuevo:
+                <input type="text" name="newUser" id="newUser" />   
+              </div> 
 
-                  </div>
-    <div class="col-sm">
-      Cambio de Contraseña
-                <label for="chkContra">
-                  <input type="checkbox" id="chkContra" align="center" />
-              </label>
-                            <div id="dvContra" style="display: none">
-                               Contraseña Anterior:
-                                <input type="text" id="txtContra" />
-                                <br><br>
-                                Contraseña Nueva:
-                                <input type="text" id="txtContra" />
-                                
-                            </div>
-                            <div id="AddUser">
-                               
-                            </div>
+            </div>
+            <div class="col-sm">  
+            <label for="chkContra">Cambio de Contraseña</label>
+              <input type="checkbox" id="chkContra" align="center" />
+                    
+              <div id="dvContra" style="display: none">
+                Contraseña Anterior:
+                <input type="password" id="txtContra" />
+                <br><br>
+                Contraseña Nueva:
+                <input type="password" id="txtContra" />   
+              </div>      
+           </div>
 
-                  </div>
+           <button style="position: absolute;top: 70%;right:40%;" type="submit" class="btn btn-outline-success" >Guardar</button>
+          </form>
 
-  
-   
-
-         <a style="position: absolute;top: 70%;right:40%;"href="" class="btn btn-outline-success" >Guardar</a>
-        <!-- Fluid Container ends -->
-
-      <!-- Page-content-wrapper ends -->
-      </div>
-
-  <!-- Container ends -->
-  </div>
+        <!-- Page-content-wrapper ends -->
+        </div>
+    <!-- Container ends -->
+    </div>
 
 
   <!-- Bootstrap core JavaScript -->

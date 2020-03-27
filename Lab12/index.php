@@ -6,8 +6,6 @@
 	$_SESSION["nombre"] = "Eric Buitrón";
 	$_SESSION["foto"] = "https://cdn.mos.cms.futurecdn.net/qcXNfw7aYK3FwqxW3zepvS.jpg";
 
-	include("verCuenta.html");
+	include("principal.html");
 	
-	
-
 ?>
