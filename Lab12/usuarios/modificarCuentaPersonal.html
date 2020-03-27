@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Cuenta Personal</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../css/simple-sidebar.css" rel="stylesheet">
+  <link href="../css/styles.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- Container wrapper -->
+    <div class="d-flex bodycontainer" id="wrapper">
+      <!-- Sidebar -->
+      <div class="border-right d-none d-md-block" id="sidebar-wrapper">
+        <div class="sidebar-heading"><a href="principalAdministrador.html"><img src="../images/logo-CMG.jpg" class="logo-CMG rounded" alt="logo CMG"></a></div>
+        <div class="list-group list-group-flush">
+          <a href="../empleados/consultarEmpleado.html" class="list-group-item list-group-item-action">Empleados</a>
+          <a href="#" class="list-group-item list-group-item-action">Beneficiarias</a>
+          <a href="../donantes/consultarDonantes.html" class="list-group-item list-group-item-action">Donantes</a>
+        </div>
+      </div>
+      <!-- Sidebar ends -->
+
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <!-- Navbar  -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <button class="btn btn-blanco" id="menu-toggle">
+            Cuenta Personal
+          </button>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle ml-auto" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <img src="https://cdn.mos.cms.futurecdn.net/qcXNfw7aYK3FwqxW3zepvS.jpg" class="imgprofile rounded-circle" alt="imgprofile">
+                  Administradora
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="../index.html">Cerrar Sesión</a>
+                  <a class="dropdown-item" href="#">Configuracion de cuenta</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="consultarCuentas.html">Configuracion de empleados</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- Navbar ends -->
+
+        <!-- Fluid Container -->
+                    <div class="container-fluid">
+
+                      <h1 class="mt-4">Configuracion de Cuenta Personal</h1>
+
+  <div class="row">
+    <div class="col-sm">
+      Cambio de Usuario
+              <label for="chkUser">
+                  <input type="checkbox" id="chkUser" align="center" />
+              </label>
+                            <div id="dvUsuario" style="display: none">
+                                Usuario Anterior:
+                                <input type="text" id="txtPassportNumber" />
+                                <br><br>
+                                 Usuario Nuevo:
+                                <input type="text" id="txtPassportNumber" />
+                            </div>
+                            <div id="AddUser">
+                               
+                            </div>
+
+                  </div>
+    <div class="col-sm">
+      Cambio de Contraseña
+                <label for="chkContra">
+                  <input type="checkbox" id="chkContra" align="center" />
+              </label>
+                            <div id="dvContra" style="display: none">
+                               Contraseña Anterior:
+                                <input type="text" id="txtContra" />
+                                <br><br>
+                                Contraseña Nueva:
+                                <input type="text" id="txtContra" />
+                                
+                            </div>
+                            <div id="AddUser">
+                               
+                            </div>
+
+                  </div>
+
+  
+   
+
+         <a style="position: absolute;top: 70%;right:40%;"href="" class="btn btn-outline-success" >Guardar</a>
+        <!-- Fluid Container ends -->
+
+      <!-- Page-content-wrapper ends -->
+      </div>
+
+  <!-- Container ends -->
+  </div>
+
+
+  <!-- Bootstrap core JavaScript -->
+
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/modificarCuenta.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+</body>
+
+</html>
