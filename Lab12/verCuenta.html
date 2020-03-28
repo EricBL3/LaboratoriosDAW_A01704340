@@ -85,6 +85,9 @@
 						<span class="material-icons">settings</span>
 					</a>
 				</div>
+
+				<!--Preguntas Lab 12-->
+				<div id="Preguntas">
 					<!-- Button trigger modal -->
 					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
 						Preguntas Lab 12
@@ -103,20 +106,35 @@
 							<div class="modal-body">
 								Preguntas:
 								<ul>
-									<li>¿Por qué es importante hacer un `session_unset()` y luego un `session_destroy()`?</li>
-
-									<li>¿Cuál es la diferencia entre una variable de sesión y una cookie?[1]</li>
+									<li><strong>¿Por qué es importante hacer un `session_unset()` y luego un `session_destroy()`?</strong></li>
+										El session_unset() se encarga de liberar todas las variables de la sesión por lo que es importante hacerlo antes
+										del session_destroy() que se encarga de destruir todos los datos asociados a la sesión. Si no se sigue este órden,
+										no se libera el espacio que ocuparon las variables de la conexión. 
+									<li><strong>¿Cuál es la diferencia entre una variable de sesión y una cookie?[1]</strong></li>
 									 Una cookie guarda la información de la sesión en la computadora del usuario mientras que una variable de sesión la guarda en el servidor.
 									
-									<li>¿Qué técnicas se utilizan en sitios como facebook para que el usuario no sobreescriba sus
-										 fotos en el sistema de archivos cuando sube una foto con el mismo nombre?</li>
-									
-									<li>¿Qué es CSRF y cómo puede prevenirse?</li>
+									<li><strong>¿Qué técnicas se utilizan en sitios como facebook para que el usuario no sobreescriba sus
+										 fotos en el sistema de archivos cuando sube una foto con el mismo nombre?</strong></li>
+										Para evitar que el usuario sobreescriba sus fotos en un sistema de archivos, se pueden utilizar varias técnicas.
+										La primer técnica es usando una secuencia de autoincremento en la que se le haga un append al nombre de la imagen con el 
+										valor de este número [2]. Otra técnica es generar un id único a cada foto que se sube al servidor [3].
+									<li><strong>¿Qué es CSRF y cómo puede prevenirse?</strong></li>
+									CSRF es un ataque en el que alguien explota los permisos de autorización de un usuario en una página que visita. Por ejemplo, 
+									al dar click en una imagen que tiene como src código, puede estar cerrando su sesión sin darse cuenta. Este tipo de ataques pueden 
+									ser muy peligrosos ya que pueden cambiar la contraseña de un usuario sin que se de cuenta o mandar una transferencia de pago sin 
+									darse cuenta.
+									<br/>
+									Una manera en la que se puede preevenir este ataque es generando un valor pseudo aleatorio y guardarlo como una cookie en el dispositivo 
+									del usuario. Todos los formularios que se mandan a procesar deben incluir este valor aleatorio. Después, el servidor compara el valor 
+									mandado en el formulario con el valor real para verificar que si haya sido realmente el usuario el que esta haciendo el submit.[4]
 								</ul>
 								<hr/>
 								Referencias:
 								<ol>
 									<li>https://www.w3schools.com/php/php_sessions.asp </li>
+									<li>https://stackoverflow.com/questions/22002812/how-can-i-ensure-unique-file-names-for-images-uploaded-to-server</li>
+									<li>https://www.php.net/uniqid</li>
+									<li>https://medium.com/@GemmaBlack/csrf-the-a-z-2b85d26438b</li>
 								</ol>
 							</div>
 							<div class="modal-footer">
@@ -125,6 +143,8 @@
 						</div>
 						</div>
 					</div>
+				</div>
+				<!--Acaban preguntas lab12-->
 			</div>
 	     <!-- Page-content-wrapper ends -->
     	</div>
