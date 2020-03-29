@@ -3,5 +3,6 @@
 
 	session_unset();
 	session_destroy();
-	header("location:controller_cuenta.php");
+	
+	header("location:index.php");
 ?>
