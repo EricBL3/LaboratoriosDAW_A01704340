@@ -1,4 +1,5 @@
 <?php
+	require_once("model.php");
 
 	include("_header.html");
 	include("partials/_nav.html");
