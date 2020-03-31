@@ -64,7 +64,7 @@
 	function crear_select($llave, $descripcion, $tabla)
 	{
 		$conexion_bd = conectar_bd();
-		$resultado = "<label for='".$tabla."'>".$tabla."</label><select class='form-control' id='".$tabla."' name='".$tabla."'><option value='' disabled selected>Selecciona una opción</option>";
+		$resultado = "<label  for='".$tabla."'>".$tabla."</label><select class='form-control mx-auto col-lg-4' id='".$tabla."' name='".$tabla."'><option value='' disabled selected>Selecciona una opción</option>";
 
 		$consulta = "SELECT $llave, $descripcion FROM $tabla";
 		$resultados = $conexion_bd->query($consulta);
@@ -74,7 +74,7 @@
 		}
 
 		desconectar_bd($conexion_bd);
-		$resultado .= "</select>";
+		$resultado .= "</select><br/>";
 		return $resultado;
 	}
 
