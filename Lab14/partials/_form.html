@@ -1,6 +1,12 @@
-<form method="POST">
 
-</form>
+<div id="miForma">
+	<form method="POST">
+		<?= crear_select("Numero", "Denominacion", "Proyectos"); ?>
+		<?= crear_select("RFC", "RazonSocial", "Proveedores"); ?>
+		<?= crear_select("Clave", "Descripcion", "Materiales"); ?>
 
+		<button type="submit" class="btn btn-primary">Buscar</button>
+	</form>
+</div>
 
 	
