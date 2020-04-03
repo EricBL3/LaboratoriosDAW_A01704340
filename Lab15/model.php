@@ -64,10 +64,16 @@
 		return $resultado;
 	}
 
-	function crear_select($llave, $descripcion, $tabla)
+	function crear_select($llave, $descripcion, $tabla, $required)
 	{
 		$conexion_bd = conectar_bd();
-		$resultado = "<label  for='".$tabla."'>".$tabla."</label><select class='form-control mx-auto col-lg-4' id='".$tabla."' name='".$tabla."'><option value='' disabled selected>Selecciona una opción</option>";
+		$resultado = "<label  for='".$tabla."'>".$tabla."</label>";
+		$resultado .= "<select class='form-control mx-auto col-lg-4' id='".$tabla."' name='".$tabla."' ";
+		if($required)
+		{
+			$resultado .= "required";
+		}
+		$resultado .= "><option value='' disabled selected>Selecciona una opción</option>";
 
 		$consulta = "SELECT $llave, $descripcion FROM $tabla";
 		$resultados = $conexion_bd->query($consulta);
@@ -92,7 +98,7 @@
 			die("Error: (".$conexion_bd->errno.") ".$conexion_bd->error);
 		}
 
-
+		$fecha = date("d-m-Y", strtotime($fecha));
 		//unir parámetros de la función con la consulta
 		//el primer arg es el formato de cada parámetro
 		if(!$statement->bind_param("isisd", $Clave, $rfc, $numero, $fecha, $cantidad))
