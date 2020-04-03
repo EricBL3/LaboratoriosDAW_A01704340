@@ -81,4 +81,32 @@
 		return $resultado;
 	}
 
+	function agregar_entrega($clave, $rfc, $numero, $fecha, $cantidad)
+	{
+		$conexion_bd = conectar_bd();
+
+		//preparar consulta
+		$dml_insertar = 'INSERT INTO Entregan (Clave, RFC, Numero, Fecha, Cantidad) VALUES (?, ?, ?, ?, ?)';
+		if(!($statement = $conexion_bd->prepare($dml_insertar)))
+		{
+			die("Error: (".$conexion_bd->errno.") ".$conexion_bd->error);
+		}
+
+
+		//unir parámetros de la función con la consulta
+		//el primer arg es el formato de cada parámetro
+		if(!$statement->bind_param("isisd", $Clave, $rfc, $numero, $fecha, $cantidad))
+		{
+			die("Error en vinculación: (".$statement->errno.") ".$statement->error);
+		}
+
+		//Ejecutar inserción
+		if(!$statement->execute())
+		{
+			die("Error en ejecución: (".$statement->errno.") ".$statement->error);
+		}
+
+		desconectar_bd($conexion_bd);
+	}
+
 ?>
