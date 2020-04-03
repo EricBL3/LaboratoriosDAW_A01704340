@@ -103,7 +103,7 @@
 		if(!($statement = $conexion_bd->prepare($dml_insertar)))
 		{
 			die("Error: (".$conexion_bd->errno.") ".$conexion_bd->error);
-			
+			return 0;
 		}
 
 		//$fecha = date_create($fecha);
@@ -113,15 +113,18 @@
 		if(!$statement->bind_param("isisd", $clave, $rfc, $numero, $fecha, $cantidad))
 		{
 			die("Error en vinculación: (".$statement->errno.") ".$statement->error);
+			return 0;
 		}
 
 		//Ejecutar inserción
 		if(!$statement->execute())
 		{
 			die("Error en ejecución: (".$statement->errno.") ".$statement->error);
+			return 0;
 		}
 
 		desconectar_bd($conexion_bd);
+		return 1;
 	}
 
 ?>

@@ -1,8 +1,11 @@
 <?php
+	session_start();
 	require_once("model.php");
 
 	include("_header.html");
 	include("partials/_nav.html");
+
+	include("partials/_mensajes.html");
 
 	include("partials/_form.html");
 

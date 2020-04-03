@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	require_once("model.php");
 
 	$material = htmlspecialchars($_POST["Materiales"]);
@@ -9,7 +10,14 @@
 
 	if(isset($material) && isset($proveedor) && isset($proyecto) && isset($fecha) && isset($cantidad))
 	{
-		agregar_entrega($material, $proveedor, $proyecto, $fecha, $cantidad);
+		if(agregar_entrega($material, $proveedor, $proyecto, $fecha, $cantidad))
+		{
+			$_SESSION["mensaje"] = "Se registro una nueva entrega!";
+		}
+		else
+		{
+			$_SESSION["warning"] = "Hubo un error al registrar la entrega!";
+		}
 	}
 
 	header("location:index.php");
