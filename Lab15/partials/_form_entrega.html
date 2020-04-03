@@ -1,8 +1,11 @@
+<a class='btn btn-primary' href='index.php' role='button'><span class='material-icons'>arrow_back</span> Regresar</a>
+
 <form method="POST" action="controlador_insertar_entrega.php" class="text-center">
-	
-	<?= crear_select("Numero", "Denominacion", "Proyectos", true); ?>
-	<?= crear_select("RFC", "RazonSocial", "Proveedores", true); ?>
+	<h2>Agregar una nueva entrega</h2>
 	<?= crear_select("Clave", "Descripcion", "Materiales", true); ?>
+	<?= crear_select("RFC", "RazonSocial", "Proveedores", true); ?>
+	<?= crear_select("Numero", "Denominacion", "Proyectos", true); ?>
+	
 	<label for="fecha">Fecha de entrega:</label>
 	<br/>
  	<input type="date" id="fecha" name="fecha" required>

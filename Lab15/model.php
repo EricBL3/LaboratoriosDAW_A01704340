@@ -1,4 +1,6 @@
 <?php
+
+	//conectarse a la bd
 	function conectar_bd()
 	{
 		$conexion_bd = mysqli_connect("localhost", "root", "", "Lab14");
@@ -8,11 +10,13 @@
 		return $conexion_bd;
 	}
 
+	//desconectarse de la bd
 	function desconectar_bd($conexion_bd)
 	{
 		mysqli_close($conexion_bd);
 	}
 
+	//consultar las entregas basado en consultas dinámicas
 	function consultar_entregas($proyectos="", $proveedores="", $materiales="")
 	{
 		$conexion_bd = conectar_bd();
@@ -37,7 +41,7 @@
 			$consulta .= ' AND E.Clave = '.$materiales;
 
 
-		$consulta .= ' ORDER BY E.Fecha ';
+		$consulta .= ' ORDER BY E.Fecha DESC ';
 
 		$resultados = $conexion_bd->query($consulta);
 		while ($row = mysqli_fetch_array($resultados, MYSQLI_BOTH))
@@ -64,6 +68,7 @@
 		return $resultado;
 	}
 
+	//crear select dinámico
 	function crear_select($llave, $descripcion, $tabla, $required)
 	{
 		$conexion_bd = conectar_bd();
@@ -87,6 +92,8 @@
 		return $resultado;
 	}
 
+
+	//agregar una entrega a la bd
 	function agregar_entrega($clave, $rfc, $numero, $fecha, $cantidad)
 	{
 		$conexion_bd = conectar_bd();
@@ -96,12 +103,14 @@
 		if(!($statement = $conexion_bd->prepare($dml_insertar)))
 		{
 			die("Error: (".$conexion_bd->errno.") ".$conexion_bd->error);
+			
 		}
 
-		$fecha = date("d-m-Y", strtotime($fecha));
+		//$fecha = date_create($fecha);
+		//$fecha = date_format($fecha, "d-m-Y H:i:s");
 		//unir parámetros de la función con la consulta
 		//el primer arg es el formato de cada parámetro
-		if(!$statement->bind_param("isisd", $Clave, $rfc, $numero, $fecha, $cantidad))
+		if(!$statement->bind_param("isisd", $clave, $rfc, $numero, $fecha, $cantidad))
 		{
 			die("Error en vinculación: (".$statement->errno.") ".$statement->error);
 		}
