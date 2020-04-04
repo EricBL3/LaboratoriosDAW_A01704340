@@ -54,7 +54,8 @@
 			$resultado .= "<td>".$row['cantidad']."</td>";
 			$resultado .= "<td>$".$row['costo_individual']."</td>";
 			$resultado .= "<td>$".$row['costo_total']."</td>";
-			$resultado .= "<td><a class='btn btn-secondary' href='#' role='button'><span class='material-icons'>settings</span></a>";
+			$resultado .= "<td><a class='btn btn-secondary' href='controlador_editar_entrega.php?fecha=".$row['fecha']."' role='button'>";
+			$resultado .= "<span class='material-icons'>settings</span></a>";
 			$resultado .= "<a class='btn btn-danger' href='#' role='button'><span class='material-icons'>remove_circle</span></a></td>";
 			$resultado .= "</tr>";
 
@@ -69,7 +70,7 @@
 	}
 
 	//crear select dinámico
-	function crear_select($llave, $descripcion, $tabla, $required)
+	function crear_select($llave, $descripcion, $tabla, $required, $seleccion = 0)
 	{
 		$conexion_bd = conectar_bd();
 		$resultado = "<label  for='".$tabla."'>".$tabla."</label>";
@@ -84,7 +85,12 @@
 		$resultados = $conexion_bd->query($consulta);
 		while($row = mysqli_fetch_array($resultados, MYSQLI_BOTH))
 		{
-			$resultado .= "<option value='".$row["$llave"]."'>".$row["$descripcion"]."</option>";
+			$resultado .= "<option value='".$row["$llave"]."' ";
+			if($seleccion === $row["$llave"])
+			{
+				$resultado .= "selected";
+			}
+			$resultado .= ">".$row["$descripcion"]."</option>";
 		}
 
 		desconectar_bd($conexion_bd);
@@ -106,8 +112,7 @@
 			return 0;
 		}
 
-		//$fecha = date_create($fecha);
-		//$fecha = date_format($fecha, "d-m-Y H:i:s");
+
 		//unir parámetros de la función con la consulta
 		//el primer arg es el formato de cada parámetro
 		if(!$statement->bind_param("isisd", $clave, $rfc, $numero, $fecha, $cantidad))
@@ -126,5 +131,50 @@
 		desconectar_bd($conexion_bd);
 		return 1;
 	}
+
+
+	//modificar una entrega
+	function editar_entrega($clave, $rfc, $numero, $fecha, $cantidad) {
+		$conexion_bd = conectar_bd();
+		  
+		//Prepara la consulta
+		$dml_editar = 'UPDATE Entregan SET Clave=(?), RFC=(?), Numero=(?), Cantidad=(?) WHERE Fecha=(?)';
+		if ( !($statement = $conexion_bd->prepare($dml_editar)) ) {
+			die("Error: (" . $conexion_bd->errno . ") " . $conexion_bd->error);
+			return 0;
+		}
+		  
+		//Unir los parámetros de la función con los parámetros de la consulta   
+		//El primer argumento de bind_param es el formato de cada parámetro
+		if (!$statement->bind_param("isids", $clave, $rfc, $numero, $cantidad, $fecha)) {
+			die("Error en vinculación: (" . $statement->errno . ") " . $statement->error);
+			return 0;
+		}
+		  
+		//Executar la consulta
+		if (!$statement->execute()) {
+		  die("Error en ejecución: (" . $statement->errno . ") " . $statement->error);
+			return 0;
+		}
+	
+		desconectar_bd($conexion_bd);
+		  return 1;
+	  }
+	
+	  //Consultar la un campo de entregan a partir de la fecha
+	  function recuperar($fecha, $campo) {
+		$conexion_bd = conectar_bd();  
+		
+		$consulta = "SELECT $campo FROM Entregan WHERE Fecha='$fecha'";
+		$resultados = $conexion_bd->query($consulta);
+		while ($row = mysqli_fetch_array($resultados, MYSQLI_BOTH)) {
+			desconectar_bd($conexion_bd);
+			return $row["$campo"];
+		}
+			
+		desconectar_bd($conexion_bd);
+		return 0;
+	  }
+
 
 ?>
