@@ -25,7 +25,7 @@
 		$materiales = "";
 
 	echo consultar_entregas($proyectos, $proveedores, $materiales);
-
+	include("partials/_modal.html");
 	include("partials/_preguntas.html");
 	include("partials/_referencias.html");
 	include("_footer.html");

@@ -56,7 +56,13 @@
 			$resultado .= "<td>$".$row['costo_total']."</td>";
 			$resultado .= "<td><a class='btn btn-secondary' href='controlador_editar_entrega.php?fecha=".$row['fecha']."' role='button'>";
 			$resultado .= "<span class='material-icons'>settings</span></a>";
-			$resultado .= "<a class='btn btn-danger' href='#' role='button'><span class='material-icons'>remove_circle</span></a></td>";
+			//esta fecha es para el id del modal de borrar
+			$fechaModal = (new DateTime($row['fecha']))->format('Y-m-d');
+			$proveedorModal =  str_replace(' ', '', $row['proyecto']);
+			$resultado .= "<button type='button' class='btn btn-danger' data-toggle='modal' data-target='#".$proveedorModal.$fechaModal."'>";
+			$resultado .= "<span class='material-icons'>remove_circle</span></button>";
+			 include("partials/_modal.html");
+
 			$resultado .= "</tr>";
 
 		}
@@ -68,6 +74,7 @@
 
 		return $resultado;
 	}
+
 
 	//crear select dinámico
 	function crear_select($llave, $descripcion, $tabla, $required, $seleccion = 0)
@@ -161,7 +168,7 @@
 		  return 1;
 	  }
 	
-	  //Consultar la un campo de entregan a partir de la fecha
+	  //Consultar un campo de entregan a partir de la fecha
 	  function recuperar($fecha, $campo) {
 		$conexion_bd = conectar_bd();  
 		
@@ -175,6 +182,35 @@
 		desconectar_bd($conexion_bd);
 		return 0;
 	  }
+
+	//Eliminar una entrega
+	function eliminar_entrega($clave, $rfc, $numero, $cantidad, $fecha)
+	{
+		$conexion_bd = conectar_bd();
+
+		//Prepara la consulta
+		$dml_eliminar = 'DELETE FROM Entregan WHERE Clave=(?) AND RFC=(?) AND Numero=(?) AND Cantidad=(?) AND Fecha=(?)';
+		if ( !($statement = $conexion_bd->prepare($dml_eliminar)) ) {
+			die("Error: (" . $conexion_bd->errno . ") " . $conexion_bd->error);
+			return 0;
+		}
+		  
+		//Unir los parámetros de la función con los parámetros de la consulta   
+		//El primer argumento de bind_param es el formato de cada parámetro
+		if (!$statement->bind_param("isids", $clave, $rfc, $numero, $cantidad, $fecha)) {
+			die("Error en vinculación: (" . $statement->errno . ") " . $statement->error);
+			return 0;
+		}
+		  
+		//Executar la consulta
+		if (!$statement->execute()) {
+		  die("Error en ejecución: (" . $statement->errno . ") " . $statement->error);
+			return 0;
+		}
+
+		desconectar_bd($conexion_bd);
+		return 1;
+	}
 
 
 ?>
