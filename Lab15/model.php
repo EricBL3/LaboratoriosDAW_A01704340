@@ -183,7 +183,7 @@
 		return 0;
 	  }
 
-	//Eliminar una entrega
+	//Eliminar una entrega 
 	function eliminar_entrega($clave, $rfc, $numero, $cantidad, $fecha)
 	{
 		$conexion_bd = conectar_bd();

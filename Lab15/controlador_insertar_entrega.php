@@ -21,4 +21,4 @@
 	}
 
 	header("location:index.php");
-?>
+?> 

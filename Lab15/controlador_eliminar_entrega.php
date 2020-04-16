@@ -22,4 +22,4 @@
 	}
 
 	header("location:index.php");
-?>
+?> 
