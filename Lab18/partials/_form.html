@@ -2,7 +2,10 @@
 <div id="miForma">
 	<form method="POST" class="text-center">
 	
-		<?= crear_select("Numero", "Denominacion", "Proyectos", false); ?>
+		<!--<?= crear_select("Numero", "Denominacion", "Proyectos", false); ?>-->
+		<label  for="userInputProyectos">Proyectos</label>
+		<input class="form-control col-md-4 mx-auto" type="text" id="userInputProyectos" onkeyup="sendRequest('Proyectos')">
+		<div id="ajaxResponseProyectos"></div>
 		<?= crear_select("RFC", "RazonSocial", "Proveedores", false); ?>
 		<?= crear_select("Clave", "Descripcion", "Materiales", false); ?>
 		<br/>
