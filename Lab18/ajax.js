@@ -18,9 +18,8 @@ function sendRequest(tabla)
 	request = getRequestObject();
 	if(request != null)
 	{
-		console.log(tabla);
 		let userInput = document.getElementById("userInput"+tabla);
-
+	
 		let url = 'controlador_ajax.php?tabla='+tabla+'&pattern='+userInput.value;
 		
 		request.open('GET', url, true);
@@ -42,10 +41,10 @@ function selectValue(tabla)
 {	
 	let list = document.getElementById("list");
 	let userInput = document.getElementById("userInput"+tabla);
+	let input = document.getElementById(tabla);
 	let ajaxResponse = document.getElementById("ajaxResponse"+tabla);
-
 	userInput.value = list.options[list.selectedIndex].text;
-	console.log(ajaxResponse);
+	input.value = list.options[list.selectedIndex].value;
 	ajaxResponse.style.visibility = "hidden";
 	userInput.focus();
 }

@@ -3,9 +3,10 @@
 	<form method="POST" class="text-center">
 	
 		<!--<?= crear_select("Numero", "Denominacion", "Proyectos", false); ?>-->
-		<label  for="userInputProyectos">Proyectos</label>
-		<input class="form-control col-md-4 mx-auto" type="text" id="userInputProyectos" onkeyup="sendRequest('Proyectos')">
+		<label  for="Proyectos">Proyectos</label>
+		<input class="form-control col-md-4 mx-auto" type="text"  id="userInputProyectos" onkeyup="sendRequest('Proyectos')">
 		<div id="ajaxResponseProyectos"></div>
+		<input type="hidden" name="Proyectos" id="Proyectos" value="">
 		<?= crear_select("RFC", "RazonSocial", "Proveedores", false); ?>
 		<?= crear_select("Clave", "Descripcion", "Materiales", false); ?>
 		<br/>

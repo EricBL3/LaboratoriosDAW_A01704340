@@ -213,4 +213,20 @@
 	}
 
 
+	//obtener todas los registros de un campo de una tabla
+	function obtener_registros($tabla, $campo)
+	{
+		$conexion_bd = conectar_bd();  
+		$array = "";
+		$consulta = 'SELECT '.$campo.' FROM '.$tabla;
+		$resultados = $conexion_bd->query($consulta);
+		while ($row = mysqli_fetch_array($resultados, MYSQLI_BOTH)){
+			$array .= $row["$campo"].",";
+		}
+		mysqli_free_result($resultados);
+		desconectar_bd($conexion_bd);
+		$array = explode(",", $array);
+		return $array;
+	}
+
 ?>

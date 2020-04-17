@@ -1,7 +1,10 @@
 <?php
+	require_once("model.php");
 	$pattern = htmlspecialchars(strtolower($_GET["pattern"]));
 	$tabla = htmlspecialchars($_GET["tabla"]);
-	$words = array("Distributed Applications", "AJAX", "Java Server Pages", "Web Services", "Data Bases", "JavaScript", "Networking", "PHP");
+	$words = obtener_registros("Proyectos", "Denominacion");
+	$ids = obtener_registros("Proyectos", "Numero");
+
 	$response = "";
 	$size = 0;
 
@@ -12,7 +15,9 @@
 		{
 			$size++;
 			$word = $words[$i];
-			$response .= "<option value=\"$word\">$word</option>";
+			$id = $ids[$i];
+			
+			$response .= "<option value=\"$id\">$word</option>";
 		}
 	}
 
