@@ -10,15 +10,15 @@
 
 	if(isset($material) && isset($proveedor) && isset($proyecto) && isset($fecha) && isset($cantidad))
 	{
-		if(agregar_entrega($material, $proveedor, $proyecto, $fecha, $cantidad))
+		if(editar_entrega($material, $proveedor, $proyecto, $fecha, $cantidad))
 		{
-			$_SESSION["mensaje"] = "Se registro una nueva entrega!";
+			$_SESSION["mensaje"] = "Se edito la entrega!";
 		}
 		else
 		{
-			$_SESSION["warning"] = "Hubo un error al registrar la entrega!";
+			$_SESSION["warning"] = "Hubo un error al editar la entrega!";
 		}
 	}
 
 	header("location:index.php");
-?> 
+?>
