@@ -24,7 +24,10 @@
 	else
 		$materiales = "";
 
+	echo "<div id='resultados_consulta'>";
 	echo consultar_entregas($proyectos, $proveedores, $materiales);
+	echo "</div>";
+
 	include("partials/_modal.html");
 	include("partials/_preguntas.html");
 	include("partials/_referencias.html");

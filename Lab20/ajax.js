@@ -1,3 +1,4 @@
+
 function getRequestObject()
 {
 	if(window.XMLHttpRequest)
@@ -37,6 +38,7 @@ function sendRequest(tabla)
 	}
 }
 
+
 function selectValue(tabla)
 {	
 	let list = document.getElementById("list");
@@ -47,4 +49,15 @@ function selectValue(tabla)
 	input.value = list.options[list.selectedIndex].value;
 	ajaxResponse.style.visibility = "hidden";
 	userInput.focus();
+}
+
+function buscar()
+{
+	$.post("index.php", {
+		Proyectos: $("#Proyectos").val(),
+		Proveedores: $("#Proveedores").val(),
+		Materiales: $("#Materiales").val()
+	}).done(function (data) {
+		$("#resultados_consulta").html(data);
+	});
 }
