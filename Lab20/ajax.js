@@ -37,8 +37,6 @@ function sendRequest(tabla)
 		request.send(null);
 	}
 }
-
-
 function selectValue(tabla)
 {	
 	let list = document.getElementById("list");
@@ -48,16 +46,29 @@ function selectValue(tabla)
 	userInput.value = list.options[list.selectedIndex].text;
 	input.value = list.options[list.selectedIndex].value;
 	ajaxResponse.style.visibility = "hidden";
+	$("#ajaxResponse"+tabla).empty();
 	userInput.focus();
 }
-
 function buscar()
 {
-	$.post("index.php", {
+	console.log("jquery");
+	$.post("controlador_buscar.php", {
 		Proyectos: $("#Proyectos").val(),
 		Proveedores: $("#Proveedores").val(),
 		Materiales: $("#Materiales").val()
 	}).done(function (data) {
 		$("#resultados_consulta").html(data);
+		$("#Proyectos").val("");
+		$("#userInputProyectos").val("");
+		$("#Proveedores").val("");
+		$("#Materiales").val("");
 	});
 }
+
+document.getElementById("buscar").onclick = buscar;
+console.log(document.getElementById("buscar"))
+
+
+
+
+
