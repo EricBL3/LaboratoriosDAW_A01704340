@@ -9,8 +9,6 @@ th
 {
 	background-color: dimgray;
 }
-
-
 .miTabla thead th {
 	position: sticky;
 	top: 0;
@@ -24,15 +22,13 @@ overflow: auto;
 .table-wrapper-scroll-y {
 display: block;
 }
-
-
 #btnAgregar
 {
 	margin: 0px 10% 0px 0px;
 }
 
 #diagrama{
-	width: 30px;
-	height: 10%;
+	width: 30%;
+	
 
 }
