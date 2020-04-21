@@ -1,7 +1,9 @@
 
 <div id="miForma" class="text-center">
-
-	
+		<br/>
+		<button id="buscar" class="btn btn-primary">Buscar sin filtro</button>
+		<br/>
+		<br/>
 		<!--<?= crear_select("Numero", "Denominacion", "Proyectos", false); ?>-->
 		<label  for="Proyectos">Proyectos</label>
 		<input class="form-control col-md-4 mx-auto" type="text" placeholder="Aztecon"  id="userInputProyectos" onkeyup="sendRequest('Proyectos')">
@@ -9,11 +11,6 @@
 		<input type="hidden" name="Proyectos" id="Proyectos" value="">
 		<?= crear_select("RFC", "RazonSocial", "Proveedores", false); ?>
 		<?= crear_select("Clave", "Descripcion", "Materiales", false); ?>
-		<br/>
-		<button id="buscar" class="btn btn-primary">Buscar</button>
-		
-
-	<br/>
 </div>
 
 <div id="botonAgregar" class="clearfix">

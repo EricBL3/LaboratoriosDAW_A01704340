@@ -1,42 +1,20 @@
 
-function getRequestObject()
-{
-	if(window.XMLHttpRequest)
-
-		return (new XMLHttpRequest);
-	else if(window.ActiveXObject)
-	{
-		//IE 6-
-		return (new ActiveXObject("Microsoft.XMLHTTP"));
-	}
-	else //no ajax
-		return (null);
-	
-}
 
 function sendRequest(tabla)
 {
-	request = getRequestObject();
-	if(request != null)
-	{
-		let userInput = document.getElementById("userInput"+tabla);
-	
-		let url = 'controlador_ajax.php?tabla='+tabla+'&pattern='+userInput.value;
-		
-		request.open('GET', url, true);
-		request.onreadystatechange = 
-			function(){
-				if(request.readyState == 4)
-				{
-					let ajaxResponse = document.getElementById("ajaxResponse"+tabla);
+	$userInput = $("#userInput"+tabla);
+	$ajaxResponse = $("#ajaxResponse"+tabla);
 
-					ajaxResponse.innerHTML = request.responseText;
-					ajaxResponse.style.visibility = "visible";
-				}
-			};
-		request.send(null);
-	}
+	$.get("controlador_ajax.php",{
+		Tabla: tabla,
+		pattern: $userInput.val()
+	}).done(function (data) {
+		
+		$ajaxResponse.html(data);
+		$ajaxResponse.css("visibility","visible");
+	});
 }
+
 function selectValue(tabla)
 {	
 	let list = document.getElementById("list");
@@ -48,25 +26,39 @@ function selectValue(tabla)
 	ajaxResponse.style.visibility = "hidden";
 	$("#ajaxResponse"+tabla).empty();
 	userInput.focus();
+	buscar(false);
 }
-function buscar()
+function buscar(reset)
 {
-	console.log("jquery");
 	$.post("controlador_buscar.php", {
 		Proyectos: $("#Proyectos").val(),
 		Proveedores: $("#Proveedores").val(),
 		Materiales: $("#Materiales").val()
 	}).done(function (data) {
 		$("#resultados_consulta").html(data);
-		$("#Proyectos").val("");
-		$("#userInputProyectos").val("");
-		$("#Proveedores").val("");
-		$("#Materiales").val("");
+		if(reset)
+		{
+			$("#Proyectos").val("");
+			$("#userInputProyectos").val("");
+			$("#Proveedores").val("");
+			$("#Materiales").val("");
+		}
 	});
 }
 
-document.getElementById("buscar").onclick = buscar;
-console.log(document.getElementById("buscar"))
+$("#buscar").click(function(){
+	$("#Proyectos").val("");
+	$("#userInputProyectos").val("");
+	$("#Proveedores").val("");
+	$("#Materiales").val("");
+	buscar(true);
+});
+$("#Proveedores").change(function(){
+	buscar(false);
+});
+$("#Materiales").change(function(){
+	buscar(false);
+});
 
 
 

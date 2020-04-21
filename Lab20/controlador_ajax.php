@@ -1,7 +1,7 @@
 <?php
 	require_once("model.php");
 	$pattern = htmlspecialchars(strtolower($_GET["pattern"]));
-	$tabla = htmlspecialchars($_GET["tabla"]);
+	$tabla = htmlspecialchars($_GET["Tabla"]);
 	$words = obtener_registros("Proyectos", "Denominacion");
 	$ids = obtener_registros("Proyectos", "Numero");
 

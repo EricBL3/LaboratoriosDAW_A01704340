@@ -86,7 +86,7 @@
 		{
 			$resultado .= "required";
 		}
-		$resultado .= "><option value='' disabled selected>Selecciona una opción</option>";
+		$resultado .= "><option value='' selected>Selecciona una opción</option>";
 
 		$consulta = "SELECT $llave, $descripcion FROM $tabla";
 		$resultados = $conexion_bd->query($consulta);
