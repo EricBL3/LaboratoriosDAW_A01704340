@@ -184,12 +184,23 @@ El procedimiento recibe como parámetro una descripción y un valor de costo y r
 Contesta en tu reporte las siguientes preguntas de reflexión:
 
 ¿Qué ventajas tienen el utilizar Stored Procedures en una aplicación cliente-servidor?
-Usar stored procedures en una aplicación cliente-servidor
+Usar stored procedures en una aplicación cliente-servidor puede ser muy útil para realizar más de una modificación o consulta a la base de datos(bd) en una sola acción. Esto permite que haya
+un menor número de conexiones a la bd para realizar estas acciones, lo cual es muy útil si las acciones se estan repitiendo de manera muy frecuente.
 
 ¿Qué ventajas tiene utilizar SP en un proyecto?
-
+Utilizar un SP en un proyecto tiene como ventaja que no todos los desarrolladores del proyecto deben tener conocimiento de SQL para poder hacer funciones en la interfaz que modifiquen la bd.
+Lo único que tienen que hacer es mandar a llamar el procedimiento que quieren utilizar. Además, permite tener un mayor nivel de seguridad en la empresa al no darle toda la información de la bd a
+todos los desarrolladores.
 
 Para reforzar el entendimiento de los SP, crea un SP que sea de utilidad en tu proyecto (en caso de usar otra tecnología, se deberá asumir). Incorpora dicho SP en tu reporte.
 
+DROP PROCEDURE IF EXISTS eliminaMedico;
+DELIMITER //
+CREATE PROCEDURE eliminaMedico(id NUMERIC(11))
+BEGIN
+	DELETE FROM medico WHERE idMedico = id;
+END;
+//
+DELIMITER ;
 
 
