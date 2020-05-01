@@ -128,6 +128,68 @@ call eliminaProveedor('ACMECORP2020M');
 
 Entregan
 
+DROP PROCEDURE IF EXISTS creaEntrega;
+DELIMITER //
+CREATE PROCEDURE creaEntrega(uclave NUMERIC(5,0), urfc CHAR(13), unumero NUMERIC(5,0), ufecha DATETIME, ucantidad NUMERIC(8,2))
+BEGIN
+	INSERT INTO Entregan VALUES(uclave, urfc, unumero, ufecha, ucantidad);
+END;
+//
+DELIMITER ;
+
+call creaEntrega(1000, 'BBBB800101', 5003, '2020-05-01 00:00:00',100);
+
+DROP PROCEDURE IF EXISTS modificaEntrega;
+DELIMITER //
+CREATE PROCEDURE modificaEntrega(uclave NUMERIC(5,0), urfc CHAR(13), unumero NUMERIC(5,0), ufecha DATETIME, ucantidad NUMERIC(8,2))
+BEGIN
+	UPDATE Entregan SET Cantidad = ucantidad WHERE Clave = uclave AND RFC = urfc AND Numero = unumero AND Fecha = ufecha;
+END;
+//
+DELIMITER ;
+
+call modificaEntrega(1000, 'BBBB800101', 5003, '2020-05-01 00:00:00',150);
+
+DROP PROCEDURE IF EXISTS eliminaEntrega;
+DELIMITER //
+CREATE PROCEDURE eliminaEntrega(uclave NUMERIC(5,0), urfc CHAR(13), unumero NUMERIC(5,0), ufecha DATETIME)
+BEGIN
+	DELETE FROM Entregan WHERE Clave = uclave AND RFC = urfc AND Numero = unumero AND Fecha = ufecha;
+END;
+//
+DELIMITER ;
+
+call eliminaEntrega(1000, 'BBBB800101', 5003, '2020-05-01 00:00:00');
+
+
+
+Crear procedimientos para realizar consultas con parámetros
+
+DROP PROCEDURE IF EXISTS queryMaterial;
+DELIMITER //
+CREATE PROCEDURE queryMaterial(udescripcion VARCHAR(50), ucosto NUMERIC(8,2))
+BEGIN
+	SELECT * FROM Materiales WHERE Descripcion
+    LIKE concat('%', udescripcion , '%') AND Costo > ucosto;
+END;
+//
+DELIMITER ;	
+
+call queryMaterial('Lad', 20);
+
+Explica en tu reporte qué recibe como parámetro este procedimiento y qué hace.
+El procedimiento recibe como parámetro una descripción y un valor de costo y regresa todos los materiales que tengan la descripción pasada cómo parametro y un costo mayor al pasado.
+
+
+Contesta en tu reporte las siguientes preguntas de reflexión:
+
+¿Qué ventajas tienen el utilizar Stored Procedures en una aplicación cliente-servidor?
+Usar stored procedures en una aplicación cliente-servidor
+
+¿Qué ventajas tiene utilizar SP en un proyecto?
+
+
+Para reforzar el entendimiento de los SP, crea un SP que sea de utilidad en tu proyecto (en caso de usar otra tecnología, se deberá asumir). Incorpora dicho SP en tu reporte.
 
 
 
