@@ -1,0 +1,58 @@
+<a class='btn btn-primary' href='index.php' role='button'><span class='material-icons'>arrow_back</span> Regresar</a>
+
+
+<?php if(isset($editar)): ?>
+	<form method="POST" action="controlador_actualizar_entrega.php" class="text-center">
+	<h2>Editar entrega</h2>
+<?php else: ?>
+	<form method="POST" action="controlador_insertar_entrega.php" class="text-center">
+	<h2>Agregar una nueva entrega</h2>	
+<?php endif; ?>
+
+	<!--Material-->
+	<?php if(isset($clave)): ?>	
+		<?= crear_select("Clave", "Descripcion", "Materiales", true, $clave); ?>
+	<?php else: ?>
+		<?= crear_select("Clave", "Descripcion", "Materiales", true); ?>
+	<?php endif; ?>
+
+	<!--Proveedor-->
+	<?php if(isset($rfc)): ?>	
+		<?= crear_select("RFC", "RazonSocial", "Proveedores", true, $rfc); ?>
+	<?php else: ?>
+		<?= crear_select("RFC", "RazonSocial", "Proveedores", true); ?>
+	<?php endif; ?>
+	
+	<!--Proyecto-->
+	<?php if(isset($numero)): ?>	
+		<?= crear_select("Numero", "Denominacion", "Proyectos", true, $numero); ?>
+	<?php else: ?>
+		<?= crear_select("Numero", "Denominacion", "Proyectos", true); ?>
+	<?php endif; ?>
+	
+	
+	
+	<?php if(isset($editar)): ?>
+		<input type="hidden" name="fecha" value="<?=$fecha?>">
+	<?php else: ?>
+		<label for="fecha">Fecha de entrega:</label>
+		<br/>
+		<input type="date" id="fecha" name="fecha" required>
+	<?php endif; ?>
+	<br/>
+
+	<label for="cantidad">Cantidad de materiales entregados:</label>
+	<br/>
+
+	<?php if(isset($cantidad)): ?>
+	<input type="number" id="cantidad" name="cantidad" min="1" max="99999999" value="<?= $cantidad?>" required>
+	<?php else: ?>
+		<input type="number" id="cantidad" name="cantidad" min="1" max="99999999" value="1" required>
+	<?php endif; ?>
+
+
+	<br/>
+	<br/>
+	<button type="submit" class="btn btn-primary">Enviar</button>
+	
+</form>
