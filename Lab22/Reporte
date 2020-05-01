@@ -1,0 +1,21 @@
+Eric Buitrón López    A01704340
+Reporte Lab 22
+
+DROP PROCEDURE IF EXISTS creaMaterial;
+DELIMITER //
+CREATE PROCEDURE creaMaterial( uclave NUMERIC(5,0), udescripcion VARCHAR(50), ucosto NUMERIC (8,2), uimpuesto NUMERIC(6,2))
+BEGIN
+	INSERT INTO Materiales VALUES(uclave, udescripcion, ucosto, uimpuesto);
+END;
+//
+DELIMITER ;
+
+¿Qué hace el primer bloque del código (bloque del IF)?
+
+
+¿Para qué sirve la instrucción GO?
+
+
+¿Explica que recibe como parámetro este Procedimiento y qué tabla modifica?
+
+CALL creaMaterial(5000,'Martillos Acme', 250, 15)

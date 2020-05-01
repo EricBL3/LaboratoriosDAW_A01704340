@@ -18,4 +18,4 @@
 		$materiales = "";
 	
 	echo consultar_entregas($proyectos, $proveedores, $materiales);
-?>
+?>  
