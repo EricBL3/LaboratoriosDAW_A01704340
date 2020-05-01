@@ -11,11 +11,56 @@ END;
 DELIMITER ;
 
 ¿Qué hace el primer bloque del código (bloque del IF)?
-
+Se encarga de borrar el stored procedure si existe
 
 ¿Para qué sirve la instrucción GO?
-
+En mi caso no utilice la instrucción GO pero sería lo equivalente a hacer un COMMIT indicando que ya se haga la acción de manera permanente.
 
 ¿Explica que recibe como parámetro este Procedimiento y qué tabla modifica?
+El procedimiento recibe como parametro los valores de cada campo que se debe llenar para insertar un nuevo registro a la tabla de Materiales.
 
 CALL creaMaterial(5000,'Martillos Acme', 250, 15)
+
+
+modificaMaterial que permite modificar un material que reciba como parámetros las columnas de la tabla materiales y actualice las columnas correspondientes con los valores recibidos, para el registro cuya llave sea la clave que se recibe como parámetro.
+
+DROP PROCEDURE IF EXISTS modificaMaterial;
+DELIMITER //
+CREATE PROCEDURE modificaMaterial( uclave NUMERIC(5,0), udescripcion VARCHAR(50), ucosto NUMERIC (8,2), uimpuesto NUMERIC(6,2))
+BEGIN
+	UPDATE Materiales SET Descripcion = udescripcion, Costo = ucosto, PorcentajeImpuesto = uimpuesto WHERE Clave = uclave;
+END;
+//
+DELIMITER ;
+
+CALL modificaMaterial(5000,'Martillos Acme', 300, 13);
+
+
+eliminaMaterial que elimina el registro de la tabla materiales cuya llave sea la clave que se recibe como parámetro.
+
+DROP PROCEDURE IF EXISTS eliminaMaterial;
+DELIMITER //
+CREATE PROCEDURE eliminaMaterial( uclave NUMERIC(5,0))
+BEGIN
+	DELETE FROM Materiales WHERE Clave = uclave;
+END;
+//
+DELIMITER ;
+
+CALL eliminaMaterial(5000);
+
+
+Desarrollar los procedimientos (almacenados) creaProyecto , modificaproyecto y eliminaproyecto, hacer lo mismo para las tablas proveedores y entregan.
+
+Proyectos
+
+
+
+Proveedores
+
+
+
+Entregan
+
+
+
