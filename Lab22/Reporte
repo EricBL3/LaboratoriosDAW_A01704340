@@ -54,6 +54,39 @@ Desarrollar los procedimientos (almacenados) creaProyecto , modificaproyecto y e
 
 Proyectos
 
+DROP PROCEDURE IF EXISTS creaProyecto;
+DELIMITER //
+CREATE PROCEDURE creaProyecto( unumero NUMERIC(5,0), udenominacion VARCHAR(50))
+BEGIN
+	INSERT INTO Proyectos VALUES(unumero, udenominacion);
+END;
+//
+DELIMITER ;
+
+call creaProyecto(3000,'Mi Proyecto');
+
+DROP PROCEDURE IF EXISTS modificaProyecto;
+DELIMITER //
+CREATE PROCEDURE modificaProyecto( unumero NUMERIC(5,0), udenominacion VARCHAR(50))
+BEGIN
+	UPDATE Proyectos SET Denominacion = udenominacion WHERE Numero = unumero;
+END;
+//
+DELIMITER ;
+
+call modificaProyecto(3000,'Construccion Parque ');
+
+DROP PROCEDURE IF EXISTS eliminaProyecto;
+DELIMITER //
+CREATE PROCEDURE eliminaProyecto( unumero NUMERIC(5,0))
+BEGIN
+	DELETE FROM Proyectos WHERE Numero = unumero;
+END;
+//
+DELIMITER ;
+
+call eliminaProyecto(3000);
+
 
 
 Proveedores
