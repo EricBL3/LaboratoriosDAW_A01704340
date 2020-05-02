@@ -229,4 +229,29 @@
 		return $array;
 	}
 
+	function queryMaterial($descripcion, $costo)
+	{
+		$conexion_bd = conectar_bd();  
+		$resultado = "<div class='table-responsive text-center miTabla table-wrapper-scroll-y my-custom-scrollbar'>";
+		$resultado .= "<table class='table table-bordered table-hover table-dark'><thead><tr><th>Clave</th><th>Descripcion</th><th>Costo</th><th>Porcentaje Impuesto</th>";
+		$consulta = 'CALL queryMaterial("'.$descripcion.'",'.$costo.')';
+		$resultados = $conexion_bd->query($consulta);
+		while ($row = mysqli_fetch_array($resultados, MYSQLI_BOTH)){
+			$resultado .= "<tr>";
+
+			$resultado .= "<td>".$row["Clave"]."</td>";
+			$resultado .= "<td>".$row["Descripcion"]."</td>";
+			$resultado .= "<td>".$row["Costo"]."</td>";
+			$resultado .= "<td>".$row["PorcentajeImpuesto"]."</td>";
+
+			$resultado .= "<tr>";
+		}
+		mysqli_free_result($resultados);
+		desconectar_bd($conexion_bd);
+
+		$resultado .= "</tbody></table></div>";
+
+		return $resultado;
+	}
+
 ?>

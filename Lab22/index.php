@@ -27,5 +27,6 @@
 	echo consultar_entregas($proyectos, $proveedores, $materiales);
 	include("partials/_modal.html");
 	include("partials/_procedures.html");
+	
 	include("_footer.html");
 ?>
