@@ -26,7 +26,20 @@
 
 	echo consultar_entregas($proyectos, $proveedores, $materiales);
 	include("partials/_modal.html");
-	include("partials/_procedures.html");
+	include("partials/_queryMaterial.html");
+
+	if(isset($_POST["Descripcion"]))
+		$descripcion = htmlspecialchars($_POST["Descripcion"]);
+	else
+		$descripcion = "";
+
+	if(isset($_POST["Costo"]))
+		$costo = htmlspecialchars($_POST["Costo"]);
+	else
+		$costo = "";
 	
+	echo queryMaterial($descripcion, $costo);
+
+
 	include("_footer.html");
 ?>
