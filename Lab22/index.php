@@ -40,6 +40,7 @@
 	
 	echo queryMaterial($descripcion, $costo);
 	include("partials/_creaMaterial.html");
+	include("partials/_modificaMaterial.html");
 
 
 	include("_footer.html");

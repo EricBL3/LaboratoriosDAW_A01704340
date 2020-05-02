@@ -286,5 +286,37 @@
 		desconectar_bd($conexion_bd);
 		return 1;
 	}
+	//modificar un material
+	function modificaMaterial($clave, $descripcion, $costo, $impuesto)
+	{
+		$conexion_bd = conectar_bd();
+
+		//preparar consulta
+		$dml_insertar = 'CALL modificaMaterial(?,?,?,?)';
+		if(!($statement = $conexion_bd->prepare($dml_insertar)))
+		{
+			die("Error: (".$conexion_bd->errno.") ".$conexion_bd->error);
+			return 0;
+		}
+
+
+		//unir parámetros de la función con la consulta
+		//el primer arg es el formato de cada parámetro
+		if(!$statement->bind_param("isdd", $clave, $descripcion, $costo, $impuesto))
+		{
+			die("Error en vinculación: (".$statement->errno.") ".$statement->error);
+			return 0;
+		}
+
+		//Ejecutar inserción
+		if(!$statement->execute())
+		{
+			die("Error en ejecución: (".$statement->errno.") ".$statement->error);
+			return 0;
+		}
+
+		desconectar_bd($conexion_bd);
+		return 1;
+	}
 
 ?>
