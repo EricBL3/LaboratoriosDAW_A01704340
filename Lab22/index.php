@@ -39,6 +39,7 @@
 		$costo = "";
 	
 	echo queryMaterial($descripcion, $costo);
+	include("partials/_creaMaterial.html");
 
 
 	include("_footer.html");

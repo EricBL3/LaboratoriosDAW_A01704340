@@ -1,0 +1,15 @@
+<div class="text-center">
+	<h3>Procedimiento creaMaterial</h3>
+	<form method="POST" action="controlador_creaMaterial.php">
+		<label for="descripcion">Descripcion:</label>
+		<input class="form-control col-md-4 mx-auto" type="text" name="descripcion" id="descripcion">
+
+		<label for="costo">Costo:</label>
+		<input class="form-control col-md-4 mx-auto" type="text" name="costo" id="costo" pattern="^\d*(\.\d{0,2})?$"> 
+
+		<label for="impuesto">Porcentaje del Impuesto:</label>
+		<input class="form-control col-md-4 mx-auto" type="text" name="impuesto" id="impuesto" pattern="^\d*(\.\d{0,2})?$">
+		<br/>
+		<button type="submit" class="btn btn-primary">Crear</button>
+	</form>
+</div>
