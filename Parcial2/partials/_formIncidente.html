@@ -1,0 +1,13 @@
+	
+<div class="container">
+
+	<h3>Registrar un nuevo incidente</h3>
+
+	<form action="" method="POST">
+
+		<?= crear_select("idTipos", "nombre", "tipos", true); ?>
+		<?= crear_select("idLugares", "nombre", "lugares", true); ?>
+
+		<button class="btn waves-effect waves-light" type="submit" name="action">Registrar</button>
+	</form>
+</div>

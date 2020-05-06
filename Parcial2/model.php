@@ -97,5 +97,36 @@
 		return $resultado;
 	}
 
+	function consultar_incidentes()
+	{
+		$conexion_bd = conectar_bd();
+
+		$resultado = "<table id='tabla' class='highlight'><thead><tr><th>Fecha</th><th>Tipo de Incidente</th><th>Lugar del Incidente</th></tr></thead><tbody>";
+
+		$consulta = 'SELECT i.fecha as fecha, t.nombre as tipo, l.nombre as lugar';
+		$consulta .= ' from incidentes as i, tipos as t, lugares as l';
+		$consulta .= ' where i.idLugares = l.idLugares and t.idTipos = i.idTipos';
+		$consulta .= ' order by i.fecha';
+
+		$resultados = $conexion_bd->query($consulta);
+		while ($row = mysqli_fetch_array($resultados, MYSQLI_BOTH))
+		{
+			$resultado .= "<tr>";
+			$resultado .= "<td>".$row['fecha']."</td>";
+			$resultado .= "<td>".$row['tipo']."</td>";
+			$resultado .= "<td>".$row['lugar']."</td>";
+			$resultado .= "<td>";
+			$resultado .= "</tr>";
+
+		}
+
+		mysqli_free_result($resultados);
+
+		desconectar_bd($conexion_bd);
+		$resultado .= "</tbody></table></div>";
+
+		return $resultado;
+	}
+
 
 ?>
