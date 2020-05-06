@@ -97,16 +97,23 @@
 		return $resultado;
 	}
 
-	function consultar_incidentes()
+	function consultar_incidentes($tipo = "", $lugar = "")
 	{
 		$conexion_bd = conectar_bd();
 
 		$resultado = "<table id='tabla' class='highlight'><thead><tr><th>Fecha</th><th>Tipo de Incidente</th><th>Lugar del Incidente</th></tr></thead><tbody>";
 
-		$consulta = 'SELECT i.fecha as fecha, t.nombre as tipo, l.nombre as lugar';
-		$consulta .= ' from incidentes as i, tipos as t, lugares as l';
-		$consulta .= ' where i.idLugares = l.idLugares and t.idTipos = i.idTipos';
-		$consulta .= ' order by i.fecha DESC';
+		$consulta = 'SELECT i.fecha AS fecha, t.nombre AS tipo, l.nombre AS lugar';
+		$consulta .= ' FROM incidentes AS i, tipos AS t, lugares AS l';
+		$consulta .= ' WHERE i.idLugares = l.idLugares AND t.idTipos = i.idTipos';
+
+		if($tipo != "")
+			$consulta.= ' AND i.idTipos ='.$tipo;
+
+		if($lugar != "")
+			$consulta.= ' AND i.idLugares ='.$lugar;
+
+		$consulta .= ' ORDER BY i.fecha DESC';
 
 		$resultados = $conexion_bd->query($consulta);
 		while ($row = mysqli_fetch_array($resultados, MYSQLI_BOTH))

@@ -1,7 +1,17 @@
 <div class="container">
 	<h3>Incidentes de Jurassic Park</h3>
+	<div id="miForma">
+		<?= crear_select("idTipos", "nombre", "tipos", false, 0, "Buscar por tipo:", true); ?>
+		<?= crear_select("idLugares", "nombre", "lugares", false, 0, "Buscar por lugar:", true); ?>
+		<br/>		
+	
+		<a class="right btn-floating btn-large waves-effect waves-light red" href="controlador_registrarIncidente.php"><i class="material-icons">add</i></a>
 
-	<a class="right btn-floating btn-large waves-effect waves-light red" href="controlador_registrarIncidente.php"><i class="material-icons">add</i></a>
 
-	<?= consultar_incidentes(); ?>
+		<div id="resultados_consulta">
+			<?= consultar_incidentes(); ?>
+		</div>
+	</div>
+
+
 </div>
