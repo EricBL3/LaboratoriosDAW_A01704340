@@ -106,7 +106,7 @@
 		$consulta = 'SELECT i.fecha as fecha, t.nombre as tipo, l.nombre as lugar';
 		$consulta .= ' from incidentes as i, tipos as t, lugares as l';
 		$consulta .= ' where i.idLugares = l.idLugares and t.idTipos = i.idTipos';
-		$consulta .= ' order by i.fecha';
+		$consulta .= ' order by i.fecha DESC';
 
 		$resultados = $conexion_bd->query($consulta);
 		while ($row = mysqli_fetch_array($resultados, MYSQLI_BOTH))
@@ -126,6 +126,38 @@
 		$resultado .= "</tbody></table></div>";
 
 		return $resultado;
+	}
+
+	function registrarIncidente($idLugares, $idTipos, $fecha)
+	{
+		$conexion_bd = conectar_bd();
+
+		//preparar consulta
+		$dml_insertar = 'CALL registrarIncidente(?,?,?)';
+		if(!($statement = $conexion_bd->prepare($dml_insertar)))
+		{
+			die("Error: (".$conexion_bd->errno.") ".$conexion_bd->error);
+			return 0;
+		}
+
+
+		//unir parámetros de la función con la consulta
+		//el primer arg es el formato de cada parámetro
+		if(!$statement->bind_param("iis", $idLugares, $idTipos, $fecha))
+		{
+			die("Error en vinculación: (".$statement->errno.") ".$statement->error);
+			return 0;
+		}
+
+		//Ejecutar inserción
+		if(!$statement->execute())
+		{
+			die("Error en ejecución: (".$statement->errno.") ".$statement->error);
+			return 0;
+		}
+
+		desconectar_bd($conexion_bd);
+		return 1;
 	}
 
 
