@@ -1,9 +1,16 @@
 <div class="container">
 	<h3>Incidentes de Jurassic Park</h3>
 	<div id="miForma">
+		<div class="center">
+			<button id="buscar" class="btn waves-effect waves-light" type="submit">Ver todo
+				<i class="material-icons right">search</i>
+			</button>
+		</div>	
 		<?= crear_select("idTipos", "nombre", "tipos", false, 0, "Buscar por tipo:", true); ?>
 		<?= crear_select("idLugares", "nombre", "lugares", false, 0, "Buscar por lugar:", true); ?>
-		<br/>		
+		<br/>	
+		
+		
 	
 		<a class="right btn-floating btn-large waves-effect waves-light red" href="controlador_registrarIncidente.php"><i class="material-icons">add</i></a>
 
