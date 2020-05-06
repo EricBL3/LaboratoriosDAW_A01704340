@@ -1,32 +1,5 @@
 
---
--- Table structure for table `incidentes`
---
-
 DROP TABLE IF EXISTS `incidentes`;
-CREATE TABLE `incidentes` (
-  `idLugares` int(11) NOT NULL,
-  `idTipos` int(11) NOT NULL,
-  `fecha` datetime NOT NULL,
-  PRIMARY KEY (`idTipos`,`fecha`,`idLugares`),
-  KEY `idLugares` (`idLugares`),
-  KEY `idTipos` (`idTipos`),
-  CONSTRAINT `fk_incidentes_idLugares` FOREIGN KEY (`idLugares`) REFERENCES `lugares` (`idLugares`) ON UPDATE CASCADE,
-  CONSTRAINT `fk_incidentes_idTipos` FOREIGN KEY (`idTipos`) REFERENCES `tipos` (`idTipos`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `incidentes`
---
-
-INSERT INTO `incidentes` VALUES 
-(2,1,'2020-05-06 11:10:59'),
-(2,5,'2020-05-06 11:11:08'),
-(6,5,'2020-05-06 11:11:26'),
-(7,7,'2020-05-06 11:12:39'),
-(8,4,'2020-05-06 11:27:22'),
-(9,6,'2020-05-06 11:52:10');
-
 
 --
 -- Table structure for table `lugares`
@@ -76,8 +49,31 @@ INSERT INTO `tipos` VALUES
 (7,'Visitantes en zona no autorizada');
 
 --
--- Dumping events for database 'dawbdorg_A01704340'
+-- Table structure for table `incidentes`
 --
+
+CREATE TABLE `incidentes` (
+  `idLugares` int(11) NOT NULL,
+  `idTipos` int(11) NOT NULL,
+  `fecha` datetime NOT NULL,
+  PRIMARY KEY (`idTipos`,`fecha`,`idLugares`),
+  KEY `idLugares` (`idLugares`),
+  KEY `idTipos` (`idTipos`),
+  CONSTRAINT `fk_incidentes_idLugares` FOREIGN KEY (`idLugares`) REFERENCES `lugares` (`idLugares`) ON UPDATE CASCADE,
+  CONSTRAINT `fk_incidentes_idTipos` FOREIGN KEY (`idTipos`) REFERENCES `tipos` (`idTipos`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `incidentes`
+--
+
+INSERT INTO `incidentes` VALUES 
+(2,1,'2020-05-06 11:10:59'),
+(2,5,'2020-05-06 11:11:08'),
+(6,5,'2020-05-06 11:11:26'),
+(7,7,'2020-05-06 11:12:39'),
+(8,4,'2020-05-06 11:27:22'),
+(9,6,'2020-05-06 11:52:10');
 
 --
 -- Dumping routines for database 'dawbdorg_A01704340'
