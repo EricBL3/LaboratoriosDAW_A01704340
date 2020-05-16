@@ -1,61 +1,94 @@
 <div id="api">
 
 	<div class="card text-center">
-		<div class="card-header h3">
-		  <?= $data["name"] ?>
+		<div class="card-header">
+			<h1><?= $clanData["name"] ?></h1>
+			<p>"<?= $clanData["description"] ?>"</p>
+			<p class="text-muted"><?= $clanData["tag"]; ?></p>
 		</div>
-		<div class="card-body">
-			<img src="<?= $data["badgeUrls"]["medium"]; ?>" />
-		  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-		  <a href="#" class="btn btn-primary">Go somewhere</a>
+		<div class="card-body d-flex justify-content-around">
+			<div id="war">
+				<h3>WAR</h3>
+				<strong>League:</strong>
+				<br/>
+				<img src="<?= $warLeagueData["iconUrls"]["small"]; ?>" />
+				<br/>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">
+						<strong>Wars won:</strong>
+						<?php echo $clanData["warWins"]; ?>
+					</li>
+					<li class="list-group-item">
+						<strong>War win streak:</strong>
+						<?php echo $clanData["warWinStreak"]; ?>
+					</li>
+					<li class="list-group-item">
+						<strong>Wars drawn:</strong>
+						<?php echo $clanData["warTies"]; ?>
+					</li><li class="list-group-item">
+						<strong>Wars lost:</strong>
+						<?php echo $clanData["warLosses"]; ?>
+					</li><li class="list-group-item">
+						<strong>War frequency:</strong>
+						<?php echo $clanData["warFrequency"]; ?>
+					</li>
+				</ul>
+				
+			</div>
+
+			<div id="general">
+				<img src="<?= $clanData["badgeUrls"]["medium"]; ?>"  />
+				<br/>
+				<?php
+				foreach ($labels as $label) {
+				?>
+				<img src="<?= $label["iconUrls"]["small"]; ?>" title="<?= $label["name"]; ?>"/>
+				<?php
+				}
+				?>
+			</div>
+			
+			<div id="info">
+				<h3>INFO</h3>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">
+						<strong>Members:</strong>
+						<?php echo $clanData["members"]; ?>/50
+					</li>
+					<li class="list-group-item">
+						<strong>Home Village Total Points:</strong>
+						<?php echo $clanData["clanPoints"]; ?>
+					</li>
+					<li class="list-group-item">
+						<strong>Builder Base Total Points:</strong>
+						<?php echo $clanData["clanVersusPoints"]; ?>
+					</li>
+					<li class="list-group-item">
+						<strong>Location:</strong>
+						<?php echo $clanData["location"]["name"]; ?>
+					</li>
+					<li class="list-group-item">
+						<strong>Type:</strong>
+						<?php echo $clanData["type"]; ?>
+					</li>
+					<li class="list-group-item">
+						<strong>Required Trophies:</strong>
+						<?php echo $clanData["requiredTrophies"]; ?>
+					</li>
+				</ul>
+			</div>
 		</div>
 		<div class="card-footer text-muted">
 		</div>
 	  </div>
 
-	<table border="1">
-		<tr>
-		<td rowspan="11">Clan level : <?php echo $data["clanLevel"]; ?><br/><img src="<?php echo $data["badgeUrls"]["medium"]; ?>" alt="<?php echo $data["name"]; ?>"/></td>
-		<td><?php echo $data["name"]; ?></td><td><?php echo $data["tag"]; ?></td>
-		<td rowspan="11"><?php echo $data["description"]; ?></td>
-		</tr>
-		<tr>
-		<td>Total points</td><td><?php echo $data["clanPoints"]; ?></td>
-		</tr>
-		<tr>
-		<td>Wars won</td><td><?php echo $data["warWins"]; ?></td>
-		</tr>
-		<tr>
-		<td>War win streak</td><td><?php echo $data["warWinStreak"]; ?></td>
-		</tr>
-		<tr>
-		<td>Wars drawn</td><td><?php echo $data["warTies"]; ?></td>
-		</tr>
-		<tr>
-		<td>Wars lost</td><td><?php echo $data["warLosses"]; ?></td>
-		</tr>
-		<tr>
-		<td>Members</td><td><?php echo $data["members"]; ?>/50</td>
-		</tr>
-		<tr>
-		<td>Type</td><td><?php echo $data["type"]; ?></td>
-		</tr>
-		<tr>
-		<td>Required trophies</td><td><?php echo $data["requiredTrophies"]; ?></td>
-		</tr>
-		<tr>
-		<td>War frequency</td><td><?php echo $data["warFrequency"]; ?></td>
-		</tr>
-		<tr>
-		<td>Clan location</td><td><?php echo $data["location"]["name"]; ?></td>
-		</tr>
-	</table>
+
 	<table border="1">
 	<?php
 	foreach ($members as $member) {
 	?>
 		<tr>
-		<td><?php echo $member["clanRank"], "(", $member["previousClanRank"], ")"; ?></td>
+		<td><?php echo $member["clanRank"]; ?></td>
 		<td><img src="<?php echo $member["league"]["iconUrls"]["tiny"]; ?>" alt="<?php echo $member["league"]["name"]; ?>"/></td>
 		<td><?php echo $member["expLevel"]; ?></td>
 		<td><?php echo "<b>", $member["name"], "</b><br/>", $member["role"]; ?></td>
