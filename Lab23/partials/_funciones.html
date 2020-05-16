@@ -1,0 +1,263 @@
+<div id="funciones">
+	<h2>Funciones</h2>
+	<div class="row row-cols-1 row-cols-md-3">
+		<!--Carta 1-->
+		<div class="col mb-4">
+			<div class="card text-white bg-dark" >
+				<div class="card-header">Función Promedios</div>
+				<div class="card-body">
+				  <p class="card-text">Esta función recibe un arreglo de números y devuelva su promedio</p>
+				</div>
+				<div class="card-footer ">
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#modalFuncion1">
+					Mostrar resultado
+					</button>
+				</div>
+			</div>
+		</div>
+		<!--Carta 2-->
+		<div class="col mb-4">
+			<div class="card text-white bg-dark" >
+				<div class="card-header">Función mediana</div>
+				<div class="card-body">
+				  <p class="card-text">Esta función recibe un arreglo de números y devuelva su mediana</p>
+				</div>
+				<div class="card-footer ">
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#modalFuncion2">
+					Mostrar resultado
+					</button>
+				</div>
+			</div>
+		</div>
+		<!--Carta 3-->
+		<div class="col mb-4">
+			<div class="card text-white bg-dark" >
+				<div class="card-header">Lista de números</div>
+				<div class="card-body">
+				  <p class="card-text">Esta función recibe un arreglo de números y muestre la lista de números, y como ítems de una lista html muestre el promedio, la media, y el arreglo ordenado de menor a mayor, y posteriormente de mayor a menor</p>
+				</div>
+				<div class="card-footer ">
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#modalFuncion3">
+					Mostrar resultado
+					</button>
+				</div>
+			</div>
+		</div>
+		<!--Carta 4-->
+		<div class="col mb-4">
+		  <div class="card text-white bg-dark">
+			<div class="card-header">Tabla de números</div>
+			<div class="card-body">
+			  <p class="card-text">Esta función imprime una tabla html, que muestre los cuadrados y cubos de 1 hasta un número n</p>
+			</div>
+			<div class="card-footer ">
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#modalFuncion4">
+				Mostrar resultado
+				</button>
+			</div>
+		  </div>
+		</div>
+		<!--Carta 5-->
+		<div class="col mb-4">
+			<div class="card text-white bg-dark" >
+				<div class="card-header">Boy or Girl</div>
+				<div class="card-body">
+				  <p class="card-text">
+					  Esta función es de un problema de <a href="https://codeforces.com/problemset/problem/236/A" target="_blank">codeforces</a> 
+					  llamado Boy or Girl en dónde se recibe un nombre de usuario y dependiendo de la cantidad de caracteres diferentes se detecta si 
+					  la persona con ese nombre de usuario es niño o niña. Si el # de caracteres es par, la persona es niña y se imprime "CHAT WITH 
+					  HER!!!". De otra manera, se imprime "IGNORE HIM!!!".
+				  </p>
+				</div>
+				<div class="card-footer ">
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#modalFuncion5">
+					Mostrar resultado
+					</button>
+				</div>
+			</div>
+		</div>
+
+		  
+	  </div>
+</div>
+<hr/>
+
+<!--Modal función 1-->
+<div class="modal fade" id="modalFuncion1" tabindex="-1" role="dialog" aria-labelledby="modalFuncion1Title" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalFuncion1Title">Función Promedios</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<p>
+					<strong>Arreglo 1: </strong> <?= implode(", ", $arreglo1); ?>
+					<br/>
+					<strong>Promedio: </strong><?= $promedio1 ?>	
+				</p>
+				<hr/>
+				<p>
+					<strong>Arreglo 2: </strong> <?= implode(", ", $arreglo2); ?>
+					<br/>
+					<strong>Promedio: </strong><?= $promedio2 ?>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Modal función 2-->
+<div class="modal fade" id="modalFuncion2" tabindex="-1" role="dialog" aria-labelledby="modalFuncion2Title" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalFuncion2Title">Función Mediana</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<p>
+					<strong>Arreglo 1: </strong> <?= implode(", ", $arreglo1); ?>
+					<br/>
+					<strong>Mediana: </strong><?= $mediana1 ?>	
+				</p>
+				<hr/>
+				<p>
+					<strong>Arreglo 2: </strong> <?= implode(", ", $arreglo2); ?>
+					<br/>
+					<strong>Mediana: </strong><?= $mediana2 ?>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Modal función 3-->
+<div class="modal fade" id="modalFuncion3" tabindex="-1" role="dialog" aria-labelledby="modalFuncion3Title" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalFuncion3Title">Lista de números</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<p>
+					<strong>Arreglo 1: </strong> <?= implode(", ", $arreglo1); ?>
+				</p>
+				<ul>
+					<li><strong>Promedio: </strong><?= $promedio1 ?></li>
+					<li><strong>Mediana: </strong><?= $mediana1 ?>	</li>
+					<li><strong>Menor a mayor: </strong><?= implode(", ", $menor_mayor1); ?></li>
+					<li><strong>Mayor a menor: </strong><?= implode(", ", $mayor_menor1); ?></li>
+				</ul>
+				<hr/>
+				<p>
+					<strong>Arreglo 2: </strong> <?= implode(", ", $arreglo2); ?>
+				</p>
+				<ul>
+					<li><strong>Promedio: </strong><?= $promedio2 ?></li>
+					<li><strong>Mediana: </strong><?= $mediana2 ?>	</li>
+					<li><strong>Menor a mayor: </strong><?= implode(", ", $menor_mayor2); ?></li>
+					<li><strong>Mayor a menor: </strong><?= implode(", ", $mayor_menor2); ?></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Modal función 4-->
+<div class="modal fade" id="modalFuncion4" tabindex="-1" role="dialog" aria-labelledby="modalFuncion4Title" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalFuncion4Title">Tabla de números</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<p>Tabla 1:</p>
+				<table class="table table-hover table-dark table-bordered table-striped">
+					<thead>
+						<tr>
+							<th><?= implode("</th><th>", array_keys(current($datos1))); ?></th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach ($datos1 as $row): array_map("htmlentities", $row); ?>
+							<tr>
+								<td><?= implode("</td><td>", $row); ?></td>
+							</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+				<hr/>
+				<p>Tabla 2:</p>
+				<table class="table table-hover table-dark table-bordered table-striped">
+					<thead>
+						<tr>
+							<th><?= implode("</th><th>", array_keys(current($datos2))); ?></th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach ($datos2 as $row): array_map("htmlentities", $row); ?>
+							<tr>
+								<td><?= implode("</td><td>", $row); ?></td>
+							</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Modal función 5-->
+<div class="modal fade" id="modalFuncion5" tabindex="-1" role="dialog" aria-labelledby="modalFuncion5Title" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalFuncion5Title">Boy or Girl</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<!--respuesta 1-->
+				<h5>User: <?= $user1 ?></h5>
+				<?php if ($respuesta1): ?>
+					<div class="alert alert-success" role="alert">
+						CHAT WITH HER!!!
+					</div>
+				<?php else: ?>
+					<div class="alert alert-danger" role="alert">
+						IGNORE HIM!!!
+					</div>
+				<?php endif ?>
+				<hr/>
+				<!--respuesta 2-->
+				<h5>User: <?= $user2 ?></h5>
+				<?php if ($respuesta2): ?>
+					<div class="alert alert-success" role="alert">
+						CHAT WITH HER!!!
+					</div>
+				<?php else: ?>
+					<div class="alert alert-danger" role="alert">
+						IGNORE HIM!!!
+					</div>
+				<?php endif ?>
+			</div>
+		</div>
+	</div>
+</div>
