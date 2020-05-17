@@ -1,4 +1,4 @@
-<div id="api">
+<div id="api" class="mx-auto">
 
 	<div class="card text-center">
 		<div class="card-header">
@@ -9,10 +9,7 @@
 		<div class="card-body d-flex justify-content-around">
 			<div id="war">
 				<h3>WAR</h3>
-				<strong>League:</strong>
-				<br/>
-				<img src="<?= $warLeagueData["iconUrls"]["small"]; ?>" />
-				<br/>
+				
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item">
 						<strong>Wars won:</strong>
@@ -46,15 +43,15 @@
 				<?php
 				}
 				?>
+				<br/>
+				<strong>War League:</strong>
+				<br/>
+				<img src="<?= $warLeagueData["iconUrls"]["small"]; ?>" title="<?= $clanData["warLeague"]["name"] ?>" />
 			</div>
 			
 			<div id="info">
 				<h3>INFO</h3>
 				<ul class="list-group list-group-flush">
-					<li class="list-group-item">
-						<strong>Members:</strong>
-						<?php echo $clanData["members"]; ?>/50
-					</li>
 					<li class="list-group-item">
 						<strong>Home Village Total Points:</strong>
 						<?php echo $clanData["clanPoints"]; ?>
@@ -79,25 +76,43 @@
 			</div>
 		</div>
 		<div class="card-footer text-muted">
+			<strong>Members:</strong>
+			<?php echo $clanData["members"]; ?>/50
 		</div>
-	  </div>
+	</div>
 
+	<div class="membersTable">
+		<table class="table table-hover" >
+			<thead>
+				<tr>
+					<th>Rank</th>
+					<th><img class="trophy" src="images/leagueIcon.png"/><br/>League</th>
+					<th><img class="levelUp" src="images/level.png"/><br/>Level</th>
+					<th>Player/<br/>Role</th>
+					<th>Troops Donated</th>
+					<th>Troops Received</th>
+					<th><img class="trophy" src="images/trophies.png"/><br/>Home Village Trophies</th>
+					<th><img class="versusTrophy" src="images/versusTrophies.png"/></br>Builder Base Trophies</th>
+				</tr>
+			</thead>
+			<?php
+			foreach ($members as $member) {
+			?>
+				<tr>
+				<td><?php echo $member["clanRank"]; ?></td>
+				<td><img src="<?php echo $member["league"]["iconUrls"]["tiny"]; ?>" alt="<?php echo $member["league"]["name"]; ?>"/></td>
+				<td><img class="levelUp" src="images/level.png"/><?php echo $member["expLevel"]; ?></td>
+				<td><?php echo "<b>", $member["name"], "</b><br/>", $member["role"]; ?></td>
+				<td>Donated:<br/><?php echo $member["donations"]; ?></td>
+				<td>Received:<br/><?php echo $member["donationsReceived"]; ?></td>
+				<td><?php echo $member["trophies"]; ?><img class="trophy" src="images/trophies.png"/></td>
+				<td><?php echo $member["versusTrophies"]; ?><img class="versusTrophy" src="images/versusTrophies.png"/></td>
+				</tr>
+			<?php
+			}
+			?>
+		</table>
+	</div>
 
-	<table border="1">
-	<?php
-	foreach ($members as $member) {
-	?>
-		<tr>
-		<td><?php echo $member["clanRank"]; ?></td>
-		<td><img src="<?php echo $member["league"]["iconUrls"]["tiny"]; ?>" alt="<?php echo $member["league"]["name"]; ?>"/></td>
-		<td><?php echo $member["expLevel"]; ?></td>
-		<td><?php echo "<b>", $member["name"], "</b><br/>", $member["role"]; ?></td>
-		<td>Donated:<br/><?php echo $member["donations"]; ?></td>
-		<td>Received:<br/><?php echo $member["donationsReceived"]; ?></td>
-		<td><?php echo $member["trophies"]; ?></td>
-		</tr>
-	<?php
-	}
-	?>
-	</table>
+	
 </div>

@@ -1,3 +1,29 @@
 table{
 	text-align: center;
 }
+
+
+#api
+{
+	width: 80%;
+}
+
+.membersTable
+{
+	border: 1px solid black;
+}
+
+img.versusTrophy
+{
+	height: 30%;
+}
+
+img.trophy
+{
+	height: 40%;
+}
+
+img.levelUp
+{
+	height: 70%;
+}
