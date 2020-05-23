@@ -1,0 +1,88 @@
+Revisa el contenido de la tabla clientes_banca desde la ventana que inicializaste como la segunda sesión:
+
+SELECT * FROM CLIENTES_BANCA
+
+¿Que pasa cuando deseas realizar esta consulta?
+La consulta muestra los registros que se insertaron en el paso anterior.
+
+
+Te habrás percatado que falta el COMMIT TRANSACTION
+
+Revisa el contenido de la tabla clientes_banca desde la ventana que inicializaste como la primera sesión con la siguiente consulta:
+
+SELECT * FROM CLIENTES_BANCA
+
+Revisa el contenido de la tabla clientes_banca desde la ventana que inicializaste como la segunda sesión.
+
+SELECT * FROM CLIENTES_BANCA
+
+¿Qué pasa cuando deseas realizar esta consulta?
+En la primera conexión si se muestran todos los registros mientras que la segunda conexión muestra solamente los registros que estaban antes de ejecutar la nueva transacción.
+
+
+
+Intenta con la siguiente consulta desde la segunda sesión:
+
+SELECT * FROM CLIENTES_BANCA where NoCuenta='001'
+
+Explica por qué ocurre dicho evento.
+Se muestra ese registro pero al buscar un NoCuenta de los registros nuevos el query no regresa ninguna columna.
+
+
+ROLLBACK TRANSACTION PRUEBA2
+
+Revisa nuevamente el contenido de la tabla clientes_banca desde la ventana que inicializaste como la segunda sesión:
+
+SELECT * FROM CLIENTES_BANCA
+
+¿Qué ocurrió y por qué?
+En las dos conexiones solo se mostraron los registros de la primera transacción.
+
+
+Posteriormente revisa si las tablas de clientes_banca y movimientos sufrieron algún cambio, es decir, si dio de alta el registro que se describe en la transacción y su actualización.
+El registro con el NoCuenta 001 tiene ahora 8500 de saldo y se registró el movimiento.
+
+
+Ejecuta la transacción, esta se ejecuta de igual forma que realizas una consulta.
+
+Revisa el contenido de la tabla materiales.
+
+Revisa el contenido de la tabla CLIENTES_BANCA.
+
+¿Para qué sirve el comando @@ERROR revisa la ayuda en línea?
+es una variable que contiene el número de error de una transacción SQL
+
+¿Qué hace la transacción?
+La transacción intenta insertar 3 registros a CLIENTES_BANCA y si hay algún error hace un rollback de la transacción.
+
+¿Hubo alguna modificación en la tabla? Explica qué pasó y por qué.
+No ya que el último insert tiene un NoCuenta que ya existe por lo que la transacción tiene un error y se hace el rollback.
+
+
+Una transacción que registre el retiro de una cajero. nombre del store procedure REGISTRAR_RETIRO_CAJERO que recibe 2 parámetros en NoCuenta y el monto a retirar.
+
+DELIMITER //
+CREATE PROCEDURE REGISTRAR_RETIRO_CAJERO( uNoCuenta VARCHAR(12), umonto NUMERIC (8,2))
+BEGIN
+	START TRANSACTION;
+		INSERT INTO MOVIMIENTOS VALUES(uNoCuenta, 'A', now(), umonto);
+        UPDATE CLIENTES_BANCA SET Saldo = Saldo - umonto WHERE NoCuenta = uNoCuenta;
+        Commit;
+END;
+//
+DELIMITER ;
+
+
+Una transacción que registre el deposito en ventanilla. Nombre del store procedure REGISTRAR_DEPOSITO_VENTANILLA que recibe 2 parámetros en NoCuenta y el monto a depositar.
+
+DELIMITER //
+CREATE PROCEDURE REGISTRAR_DEPOSITO_VENTANILLA( uNoCuenta VARCHAR(12), umonto NUMERIC (8,2))
+BEGIN
+	START TRANSACTION;
+		INSERT INTO MOVIMIENTOS VALUES(uNoCuenta, 'B', now(), umonto);
+        UPDATE CLIENTES_BANCA SET Saldo = Saldo + umonto WHERE NoCuenta = uNoCuenta;
+        Commit;
+END;
+//
+DELIMITER ;
+
