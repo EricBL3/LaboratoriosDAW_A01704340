@@ -4,7 +4,7 @@ require_once("model.php");
 //obtener info de villagers
 
 $villagers = getData("villagers");
-
+$specialCharacters = getData("specialcharacters");
 
 include("_header.html");
 

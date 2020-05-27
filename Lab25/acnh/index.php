@@ -6,7 +6,6 @@ Flight::route('/', function(){
     
 });
 
-
 /*
     VILLAGERS
 */
@@ -66,11 +65,38 @@ Flight::route('/villagers', function(){
     ));
 });
 
-//Flight::route('/specia')
 
 Flight::route('/specialcharacters', function(){
 
-        echo "That villager doesn't exist";
+    Flight::json(array(
+        //special 1 - Tom Nook
+        array(
+        'id'=>1,
+        'name'=>'Tom Nook',
+        'imageUrl'=>'https://vignette.wikia.nocookie.net/animalcrossing/images/e/ef/NH-character-Tom_Nook.png/revision/latest/scale-to-width-down/86?cb=20191228193640',
+        'service'=>'Resident Services, Nook Inc.',
+        'species'=>'Tanooki',
+        'birthday'=>'May 30'),
+            
+       //special 2 - Isabelle
+       array(
+        'id'=>2,
+        'name'=>'Isabelle',
+        'imageUrl'=>'https://vignette.wikia.nocookie.net/animalcrossing/images/0/01/Newhorizonsisabelle.png/revision/latest/scale-to-width-down/75?cb=20200224191140',
+        'service'=>'Secretary',
+        'species'=>'Dog',
+        'birthday'=>'December 20'),
+    
+        //special 3 - K.K. Slider
+        array(
+            'id'=>3,
+            'name'=>'K.K. Slider',
+            'imageUrl'=>'https://vignette.wikia.nocookie.net/animalcrossing/images/2/2b/NH-character-K.K._Slider.png/revision/latest/scale-to-width-down/83?cb=20200519012648',
+            'service'=>'Songs',
+            'species'=>'Dog',
+            'birthday'=>'August 23')
+
+    ));
 });
 
 Flight::start();
