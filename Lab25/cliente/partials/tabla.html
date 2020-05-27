@@ -1,0 +1,30 @@
+<div id="api" class="mx-auto text-center">
+	<h3>VILLAGERS</h3>
+	<table class="table table-striped table hover">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Image</th>
+				<th>Personality</th>
+				<th>Species</th>
+				<th>Birthday</th>
+				<th>Catchphrase</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach($villagers as $villager){ ?>
+				<tr>
+					<td><?= $villager["name"] ?></td>
+					<td><img src="<?= $villager["imageUrl"] ?>"></td>
+					<td><?= $villager["personality"] ?></td>
+					<td><?= $villager["species"] ?></td>
+					<td><?= $villager["birthday"] ?></td>
+					<td><?= $villager["catchphrase"] ?></td>
+				</tr>
+			<?php } ?>
+
+		</tbody>
+
+	</table>
+	
+</div>

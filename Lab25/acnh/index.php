@@ -12,8 +12,7 @@ Flight::route('/', function(){
 */
 
 Flight::route('/villagers', function(){
-    echo "Display villager data";
-    Flight::jsonp(array('villagers'=> array(
+    Flight::json(array(
         //Villager 1 -Admiral
         array(
         'id'=>1,
@@ -64,7 +63,7 @@ Flight::route('/villagers', function(){
             'birthday'=>'April 22',
             'catchphrase'=>'sparky')
 
-    )));
+    ));
 });
 
 //Flight::route('/specia')
