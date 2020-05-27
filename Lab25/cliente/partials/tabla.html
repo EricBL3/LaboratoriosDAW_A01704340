@@ -26,5 +26,31 @@
 		</tbody>
 
 	</table>
+	<br>
+	<h3>SPECIAL CHARACTERS</h3>
+	<table class="table table-striped table-hover">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Image</th>
+				<th>Service</th>
+				<th>Species</th>
+				<th>Birthday</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach($specialCharacters as $character){ ?>
+				<tr>
+					<td><?= $character["name"] ?></td>
+					<td><img src="<?= $character["imageUrl"] ?>"></td>
+					<td><?= $character["service"] ?></td>
+					<td><?= $character["species"] ?></td>
+					<td><?= $character["birthday"] ?></td>
+				</tr>
+			<?php } ?>
+
+		</tbody>
+
+	</table>
 	
 </div>
